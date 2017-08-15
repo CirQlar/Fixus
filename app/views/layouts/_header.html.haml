@@ -1,0 +1,14 @@
+#header
+  %a{:href => root_path, :class => 'logo'}
+    = image_tag "logo", alt: "Fixus logo"
+
+  #nav
+    = link_to "Home", root_path
+    = link_to "Repair Your Device", '#'
+    = link_to "Order", '#'
+    %ul.dropdown
+      %li Mr. James Junior
+      %li#content
+        #content_wrapper
+          = link_to "Log in", '#'
+          = link_to "Sign up", '#'
