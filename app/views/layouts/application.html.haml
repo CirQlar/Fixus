@@ -11,4 +11,9 @@
       = stylesheet_link_tag 'desktop', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    = render 'layouts/header'
+
+    #page
+      = yield
+
+    = render 'layouts/footer'
