@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     session[:mobile_override] = params[:mobile] if params[:mobile]
     prepare_for_mobile if mobile_device?
   end
+  
+  helper_method :mobile_device?
 end
-
-helper_method :mobile_device?
