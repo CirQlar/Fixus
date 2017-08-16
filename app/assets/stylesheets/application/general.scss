@@ -13,3 +13,49 @@ a {
   color: inherit;
   font-weight: 100;
 }
+
+ul.dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 64px;
+
+  &:hover, &:focus {
+    li#content {
+      display: block;
+    }
+  }
+
+  li {
+    &#title {
+      display: block;
+      height: 100%;
+      float: right;
+      cursor: pointer;
+      line-height: 64px;
+
+      img {
+        height: 100%;
+        padding: 16px;
+      }
+    }
+
+    &#content {
+      display: none;
+      position: absolute;
+      white-space: nowrap;
+      text-transform: uppercase;
+      top: 100%;
+      right: 0;
+      position: relative;
+
+      a {
+        display: block;
+        line-height: 32px;
+        font-size: 16px;
+      }
+    }
+  }
+}
