@@ -20,7 +20,7 @@ ul.dropdown {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 80px;
+  height: 64px;
 
   &:hover, &:focus {
     li#content {
@@ -34,11 +34,11 @@ ul.dropdown {
       height: 100%;
       float: right;
       cursor: pointer;
-      line-height: 5em;
+      line-height: 64px;
 
       img {
         height: 100%;
-        padding: 1em;
+        padding: 16px;
       }
     }
 
@@ -49,18 +49,12 @@ ul.dropdown {
       text-transform: uppercase;
       top: 100%;
       right: 0;
+      position: relative;
 
-      #content_wrapper {
-        display: inline-block;
-        padding: 0 1em;
-        background-color: white;
-        position: relative;
-
-        a {
-          display: block;
-          line-height: 2em;
-          font-size: 0.8em;
-        }
+      a {
+        display: block;
+        line-height: 32px;
+        font-size: 16px;
       }
     }
   }
