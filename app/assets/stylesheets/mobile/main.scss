@@ -1,0 +1,39 @@
+#header {
+  padding: 0 16px;
+  position: relative;
+
+  .logo {
+    padding: 24px;
+    height: 128px;
+  }
+
+  li#title {
+    display: block;
+    float: right;
+    height: 100%;
+    line-height: 128px;
+    padding-right: 16px;
+    font-size: 48px;
+  }
+
+  #nav {
+    display: none;
+    clear: both;
+    width: 100%;
+    padding: 0 16px 40px;
+
+    a {
+      display: block;
+      font-size: 40px;
+      text-align: left;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        margin: 32px 0;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
