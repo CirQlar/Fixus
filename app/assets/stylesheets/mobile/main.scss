@@ -4,14 +4,14 @@
 
   .logo {
     padding: 24px;
-    height: 128px;
+    height: 160px;
   }
 
   li#title {
     display: block;
     float: right;
     height: 100%;
-    line-height: 128px;
+    line-height: 160px;
     padding-right: 16px;
     font-size: 48px;
   }
@@ -24,7 +24,7 @@
 
     a {
       display: block;
-      font-size: 40px;
+      font-size: 48px;
       text-align: left;
 
       &:before {
@@ -35,5 +35,59 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
       }
     }
+  }
+}
+
+#footer {
+  padding: 0 16px;
+  position: relative;
+
+  .section {
+    width: 50%;
+    float: left;
+    padding: 0px 32px;
+
+    &:nth-child(odd) {
+      text-align: right;
+    }
+
+    &:nth-last-child(3):nth-child(odd) {
+      width: 100%;
+      text-align: center;
+      padding: 0px 32px 32px;
+    }
+
+    &:nth-last-child(4):nth-child(odd), &:nth-last-child(3):nth-child(even) {
+      padding: 0px 32px 32px;
+    }
+
+    span, a {
+      font-size: 48px;
+    }
+
+    span {
+      margin: 32px 0;
+    }
+
+    a {
+      margin: 24px 0;
+    }
+  }
+
+  #logos {
+    clear: both;
+    position: relative;
+
+    img {
+      width: 256px;
+      height: 256px;
+      margin: 16px;
+    }
+  }
+
+  #copyright {
+    font-size: 48px;
+    padding: 32px 0;
+    clear: both;
   }
 }
