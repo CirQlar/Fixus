@@ -11,11 +11,10 @@
     - else
       = stylesheet_link_tag 'desktop', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    
+
   %body
     = render 'layouts/header'
 
-    #page
-      = yield
+    = yield
 
     = render 'layouts/footer'

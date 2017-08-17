@@ -1,0 +1,24 @@
+.banner {
+  align-items: left;
+  text-align: left;
+  padding: 0 128px;
+
+  a {
+    margin: 8px 0;
+  }
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: 48px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+a {
+  &.button {
+    padding: 16px 24px;
+  }
+}

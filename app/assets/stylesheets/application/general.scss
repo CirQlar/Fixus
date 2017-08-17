@@ -8,12 +8,6 @@
   clear: both;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 100;
-}
-
 ul.dropdown {
   display: inline-block;
   position: relative;
@@ -58,4 +52,34 @@ ul.dropdown {
       }
     }
   }
+}
+
+.banner {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 100;
+
+  &.button {
+    background-color: #29555c;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+h1 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
 }
