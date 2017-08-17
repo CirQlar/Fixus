@@ -16,7 +16,8 @@ body {
   font-size: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 #header {
@@ -39,6 +40,8 @@ body {
 }
 
 #footer {
+  position: relative;
+  margin-top: auto;
   width: 100%;
   background-color: #e8e8e8;
 
