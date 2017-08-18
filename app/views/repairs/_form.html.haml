@@ -1,0 +1,7 @@
+= simple_form_for @repair do |f|
+  = f.simple_fields_for :device do |dev_f|
+    = dev_f.input :name
+  = f.simple_fields_for :address do |add_f|
+    = add_f.input :city
+  = f.input :info
+  =f.button :submit
