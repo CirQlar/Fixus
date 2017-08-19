@@ -37,6 +37,6 @@ class RepairsController < ApplicationController
     end
 
     def repair_params
-      params.require(:repair).permit(:info, device_attributes: [:name], address_attributes: [:city])
+      params.require(:repair).permit(:info, device_attributes: [:name, :color, :serial_number], address_attributes: [:line_1, :line_2, :lga])
     end
 end
