@@ -5,6 +5,13 @@ class RepairsController < ApplicationController
     @repair = Repair.new
     @repair.address = Address.new
     @repair.device = Device.new
+
+    @new_device = params[:new_device] ? params[:new_device] : false
+    @new_address = params[:new_address] ? params[:new_address] : false
+
+
+    @addresses = Address.all
+    @devices = Device.all
   end
 
   def create
@@ -37,6 +44,6 @@ class RepairsController < ApplicationController
     end
 
     def repair_params
-      params.require(:repair).permit(:info, device_attributes: [:name, :color, :serial_number], address_attributes: [:line_1, :line_2, :lga])
+      params.require(:repair).permit(:info, :device_id, :address_id, device_attributes: [:name, :color, :serial_number], address_attributes: [:line_1, :line_2, :lga])
     end
 end

@@ -1,14 +1,20 @@
 = simple_form_for @repair do |f|
-  .form_section
-    = f.simple_fields_for :device do |dev_f|
-      = dev_f.input :name
-      = dev_f.input :color
-      = dev_f.input :serial_number
-  .form_section
-    = f.simple_fields_for :address do |add_f|
-      = add_f.input :line_1
-      = add_f.input :line_2
-      = add_f.input :lga
+  .form_section#device
+    - if @devices.empty? || params[:new_device]
+      = render 'newdev_f', f: f
+      - if params[:new_device]
+        = link_to "Select from past devices", new_repair_path(new_device: false), remote: true
+    - else
+      = f.input :device_id, collection: @devices, label_method: :name, value_method: :id
+      = link_to "Add a new device", new_repair_path(new_device: true), remote: true
+  .form_section#address
+    - if @addresses.empty? || params[:new_address]
+      = render 'newadd_f', f: f
+      - if params[:new_address]
+        = link_to "Select from saved addresses", new_repair_path(new_address: false), remote: true
+    - else
+      = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id
+      = link_to "Or add a new address", new_repair_path(new_address: true), remote: true
   .form_section
     = f.input :info
   .actions
