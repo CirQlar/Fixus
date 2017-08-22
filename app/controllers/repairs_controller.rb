@@ -6,10 +6,7 @@ class RepairsController < ApplicationController
     @repair.address = Address.new
     @repair.device = Device.new
 
-    @new_device = params[:new_device] ? params[:new_device] : false
-    @new_address = params[:new_address] ? params[:new_address] : false
-
-
+    #temporary
     @addresses = Address.all
     @devices = Device.all
   end

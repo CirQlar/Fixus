@@ -1,20 +1,22 @@
 = simple_form_for @repair do |f|
   .form_section#device
-    - if @devices.empty? || params[:new_device]
+    #new_device
       = render 'newdev_f', f: f
-      - if params[:new_device]
-        = link_to "Select from past devices", new_repair_path(new_device: false), remote: true
-    - else
-      = f.input :device_id, collection: @devices, label_method: :name, value_method: :id
-      = link_to "Add a new device", new_repair_path(new_device: true), remote: true
+      - unless @devices.empty?
+        = link_to "Select from past devices", '#'
+    - unless @devices.empty?
+      #old_device.hidden
+        = f.input :device_id, collection: @devices, label_method: :name, value_method: :id
+        = link_to "Fix a new device", '#'
   .form_section#address
-    - if @addresses.empty? || params[:new_address]
+    #new_address
       = render 'newadd_f', f: f
-      - if params[:new_address]
-        = link_to "Select from saved addresses", new_repair_path(new_address: false), remote: true
-    - else
-      = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id
-      = link_to "Or add a new address", new_repair_path(new_address: true), remote: true
+      - unless @addresses.empty?
+        = link_to "Select from saved addresses", '#'
+    - unless @addresses.empty?
+      #old_address.hidden
+        = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id
+        = link_to "Use a new address", '#'
   .form_section
     = f.input :info
   .actions
