@@ -1,6 +1,9 @@
 class RepairsController < ApplicationController
   before_action :set_repair, only: [:show, :edit, :update]
 
+  def index    
+  end
+
   def new
     @repair = Repair.new
     @repair.address = Address.new

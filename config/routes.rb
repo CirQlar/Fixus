@@ -14,7 +14,19 @@ Rails.application.routes.draw do
   patch 'repair/:id', to: 'repairs#update'
   put 'repair/:id', to: 'repairs#update'
 
+  #Device routes
+  get 'devices', to: 'devices#index', as: 'device_index'
+  get 'device/:id', to: 'devices#show', as: 'device'
+  get 'device/:id/edit', to: 'devices#edit', as: 'edit_device'
+  patch 'device/:id', to: 'devices#update'
+  put 'device/:id', to: 'devices#update'
 
+  #Address routes
+  get 'addresses', to: 'addresses#index', as: 'address_index'
+  get 'address/:id', to: 'addresses#show', as: 'address'
+  get 'address/:id/edit', to: 'addresses#edit', as: 'edit_address'
+  patch 'address/:id', to: 'addresses#update'
+  put 'address/:id', to: 'addresses#update'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
