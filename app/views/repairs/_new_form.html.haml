@@ -1,4 +1,4 @@
-= simple_form_for @repair do |f|
+= simple_form_for @repair, defaults: defaults do |f|
   .form_section#device
     #new_device
       = render 'newdev_f', f: f
@@ -6,7 +6,7 @@
         = link_to "Select from past devices", '#'
     - unless @devices.empty?
       #old_device.hidden
-        = f.input :device_id, collection: @devices, label_method: :name, value_method: :id
+        = f.input :device_id, collection: @devices, label_method: :name, value_method: :id, prompt: "Choose a device"
         = link_to "Fix a new device", '#'
   .form_section#address
     #new_address
@@ -15,9 +15,9 @@
         = link_to "Select from saved addresses", '#'
     - unless @addresses.empty?
       #old_address.hidden
-        = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id
+        = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id, prompt: "Choose an address"
         = link_to "Use a new address", '#'
   .form_section
-    = f.input :info
+    = f.input :info, placeholder: "Extra info about your issue"
   .actions
     = f.button :submit
