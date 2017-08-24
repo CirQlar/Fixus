@@ -18,6 +18,11 @@ h2 {
   font-size: 32px;
 }
 
+h3 {
+  margin: 4px 0;
+  font-size: 24px;
+}
+
 p {
   margin: 8px 0;
 }
@@ -37,7 +42,7 @@ a {
 }
 
 .form {
-  width: 384px;
+  width: 416px;
   padding: 4px 16px 16px;
   text-align: left;
   -webkit-appearance: textfield;
@@ -66,9 +71,36 @@ a {
     select {
       background-color: transparent;
     }
-    
-    .formsection {
 
+    .form_section {
+      &#device, &#address {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        #cont {
+          width: 200%;
+          display: flex;
+          align-items: center;
+
+          #new_device, #old_device, #new_address, #old_address {
+            min-width: 50%;
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+
+      input {
+        background-color: #29555C;
+        border: none;
+        color: white;
+        font-weight: 300;
+        cursor: pointer;
+        height: 48px;
+      }
     }
   }
 }

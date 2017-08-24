@@ -1,22 +1,28 @@
 = simple_form_for @repair, defaults: defaults do |f|
   .form_section#device
-    #new_device
-      = render 'newdev_f', f: f
+    #cont
+      #new_device
+        %h3 Enter your device details
+        = render 'newdev_f', f: f
+        - unless @devices.empty?
+          = link_to "Or select from past devices", '#old_device'
       - unless @devices.empty?
-        = link_to "Select from past devices", '#'
-    - unless @devices.empty?
-      #old_device.hidden
-        = f.input :device_id, collection: @devices, label_method: :name, value_method: :id, prompt: "Choose a device"
-        = link_to "Fix a new device", '#'
+        #old_device
+          %h3 Choose a device
+          = f.input :device_id, collection: @devices, label_method: :name, value_method: :id, prompt: "Choose a device"
+          = link_to "Or fix a new device", '#new_device'
   .form_section#address
-    #new_address
-      = render 'newadd_f', f: f
+    #cont
+      #new_address
+        %h3 Enter your address
+        = render 'newadd_f', f: f
+        - unless @addresses.empty?
+          = link_to "Or select from saved addresses", '#old_address'
       - unless @addresses.empty?
-        = link_to "Select from saved addresses", '#'
-    - unless @addresses.empty?
-      #old_address.hidden
-        = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id, prompt: "Choose an address"
-        = link_to "Use a new address", '#'
+        #old_address
+          %h3 Choose an address
+          = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id, prompt: "Choose an address"
+          = link_to "Or use a new address", '#new_address'
   .form_section
     = f.input :info, placeholder: "Extra info about your issue"
   .actions
