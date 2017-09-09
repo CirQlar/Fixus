@@ -1,13 +1,19 @@
 class RepairsController < ApplicationController
   before_action :set_repair, only: [:show, :edit, :update]
 
-  def index    
+  def index
   end
 
   def new
     @repair = Repair.new
     @repair.address = Address.new
     @repair.device = Device.new
+
+    if user_signed_in?
+      @repair.user = current_user
+    else
+      @repair.user = User.new
+    end
 
     #temporary
     @addresses = Address.all
