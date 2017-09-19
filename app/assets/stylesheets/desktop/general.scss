@@ -75,16 +75,34 @@ a {
     .form_section {
       &#device, &#address {
         width: 100%;
-        overflow: hidden;
         position: relative;
 
-        #cont {
-          width: 200%;
-          display: flex;
-          align-items: center;
+        &.new {
+          #new_device, #new_address {
+            display: block;
+          }
 
-          #new_device, #old_device, #new_address, #old_address {
-            min-width: 50%;
+          #old_device, #old_address {
+            display: none;
+          }
+        }
+
+        &.old {
+          #new_device, #new_address {
+            display: none;
+          }
+
+          #old_device, #old_address {
+            display: block;
+          }
+        }
+
+        #new_device, #new_address, #old_device, #old_address {
+          span {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 100;
+            cursor: pointer;
           }
         }
       }

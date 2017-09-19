@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admins/dashboard'
+
   #Page routes
   root 'pages#index'
   get 'about', to: 'pages#about'
@@ -31,6 +33,10 @@ Rails.application.routes.draw do
   #User routes
   get '/dashboard', to: 'users#dashboard', as: 'user_root'
   devise_for :users
+
+  #Admin routes
+  get '/adash', to: 'admins#dashboard', as: 'admin_root'
+  devise_for :admins
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

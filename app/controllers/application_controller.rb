@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
     prepare_for_mobile if mobile_device?
   end
 
+  def authenticate_user_or_admin!
+    #waste of time
+  end
+
   helper_method :mobile_device?
 end
