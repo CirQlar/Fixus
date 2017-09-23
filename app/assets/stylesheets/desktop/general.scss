@@ -111,7 +111,31 @@ a {
 }
 
 .fsection {
-  padding: 16px 128px;
+  padding: 32px 128px;
+  background-image: url(/assets/dback.png);
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  &.left {
+    background-image: url(/assets/rback.png);
+    background-position: right;
+    background-size: cover;
+
+    .form {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &.right {
+    background-image: url(/assets/lback.png);
+    background-position: left;
+    background-size: cover;
+
+    .form {
+      margin: 0 0 0 auto;
+    }
+  }
 
   &.form {
     display: flex;
@@ -122,12 +146,13 @@ a {
   width: 416px;
   padding: 4px 16px 16px;
   text-align: left;
-  -webkit-appearance: textfield;
-  border-width: 1px;
-  border-style: inset;
-  border-color: initial;
-  border-image: initial;
-  margin-left: auto;
+  color: white;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
 
   form {
     input, select, textarea {
@@ -147,6 +172,12 @@ a {
 
     select {
       background-color: transparent;
+    }
+
+    input[type=checkbox] {
+      width: auto;
+      height: auto;
+      margin: 8px 8px 8px 0;
     }
 
     .form_section {
@@ -185,16 +216,18 @@ a {
       }
     }
 
-    .actions {
+    .form-actions {
       display: flex;
 
       input {
-        background-color: #29555C;
+        background-color: #22b573;
         border: none;
         color: white;
-        font-weight: 300;
+        font-weight: 400;
         cursor: pointer;
-        height: 48px;
+        height: 34px;
+        text-transform: uppercase;
+
       }
     }
   }
