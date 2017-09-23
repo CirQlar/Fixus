@@ -2,9 +2,86 @@
   align-items: left;
   text-align: left;
   padding: 0 128px;
+  background-image: url(/assets/cpatt.png);
+  background-position: center;
+  background-size: cover;
 
-  a {
-    margin: 8px 0;
+  .cont {
+    background-color: rgba(255,255,255,.7);
+    padding: 16px;
+
+    a {
+      margin: 8px 0;
+    }
+  }
+
+  .big {
+    position: absolute;
+    right: 192px;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 10vh;
+    box-shadow: inset 1px 1px 10px -2px #333333;
+    background-color: white;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+
+  .divide {
+    position: absolute;
+    width: 0px;
+    height: 80%;
+    left: 50%;
+    top: 10%;
+    border: 1px solid #e3e3e3;
+  }
+
+  .right,.left {
+    width: 50%;
+    display: flex;
+
+    .image {
+      width: 50%;
+      padding: 32px;
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+    .cont {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .left {
+    float: left;
+    flex-direction: row-reverse;
+
+    .cont {
+      text-align: right;
+    }
+  }
+
+  .right {
+    float: right;
+
+    .cont {
+      text-align: left;
+    }
   }
 }
 
@@ -33,7 +110,7 @@ a {
   }
 }
 
-.section {
+.fsection {
   padding: 16px 128px;
 
   &.form {

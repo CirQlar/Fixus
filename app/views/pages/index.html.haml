@@ -1,7 +1,24 @@
 .banner
-  %h1
-    Need a quick fix?
-    %br
-    We can help!
-  %p Get it fixed by experts in record time without ever leaving your house!
-  = link_to 'Fix It Now', new_repair_path, class: 'button highlight'
+  .big= image_tag 'fixus_icon', alt: "Fixus logo", class: 'fixus'
+  .cont
+    %h1
+      Need a quick fix?
+      %br
+      We can help!
+    %p Get it fixed by experts in record time without ever leaving your house!
+    = link_to 'Fix It Now', new_repair_path, class: 'button highlight'
+
+.section
+  .left
+    = link_to image_tag('fixus_icon', alt: "Fixus logo", class: 'fixus'), '#', class: 'image'
+    .cont
+      %h2 For Businesses
+      %p Lots of info for businesses and such please stuff my stuff with stuff from stuff's way
+      = link_to 'Read more', '#'
+  .divide
+  .right
+    = link_to image_tag('fixus_icon', alt: "Fixus logo", class: 'fixus'), '#', class: 'image'
+    .cont
+      %h2 For Individuals
+      %p Lots of info for businesses and such please stuff my stuff with stuff from stuff's way
+      = link_to 'Read more', '#'
