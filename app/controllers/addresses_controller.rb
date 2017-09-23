@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user_or_admin!
   before_action :set_address, only: [:show, :edit, :update]
 
   def index
@@ -21,6 +22,7 @@ class AddressesController < ApplicationController
   private
     def set_address
       @address = Address.find(params[:id])
+      correct_user_signed_in? @address
     end
 
     def address_params

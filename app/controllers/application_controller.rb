@@ -20,7 +20,17 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user_or_admin!
-    #waste of time
+    unless admin_signed_in?
+      unless user_signed_in?
+        redirect_to new_user_session_path
+      end
+    end
+  end
+
+  def correct_user_signed_in?(obj)
+    if user_signed_in?
+      redirect_to root_path unless (obj.user == current_user)
+    end
   end
 
   helper_method :mobile_device?

@@ -1,1 +1,5 @@
-index
+- if @devices
+  - @devices.each do |device|
+    %p= device.name
+- else
+  %p Index

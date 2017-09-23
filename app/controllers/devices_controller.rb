@@ -1,7 +1,13 @@
 class DevicesController < ApplicationController
+  before_action :authenticate_user_or_admin!
   before_action :set_device, only: [:show, :edit, :update]
 
   def index
+    if user_signed_in?
+      @devices = current_user.devices
+    else
+      @devices = Device.all
+    end
   end
 
   def edit
@@ -16,11 +22,13 @@ class DevicesController < ApplicationController
   end
 
   def show
+
   end
 
   private
     def set_device
       @device = Device.find(params[:id])
+      correct_user_signed_in? @device
     end
 
     def device_params

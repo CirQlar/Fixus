@@ -1,4 +1,5 @@
 class RepairsController < ApplicationController
+  before_action :authenticate_user_or_admin!
   before_action :set_repair, only: [:show, :edit, :update]
 
   def index
@@ -22,6 +23,9 @@ class RepairsController < ApplicationController
 
   def create
     @repair = Repair.new(repair_params)
+    @repair.user = current_user
+    @repair.device.user = current_user
+    @repair.address.user = current_user
 
     if @repair.save
       redirect_to @repair
@@ -47,6 +51,7 @@ class RepairsController < ApplicationController
   private
     def set_repair
       @repair = Repair.find(params[:id])
+      correct_user_signed_in? @repair
     end
 
     def repair_params
