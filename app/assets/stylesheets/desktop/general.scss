@@ -2,7 +2,7 @@
   align-items: left;
   text-align: left;
   padding: 0 128px;
-  background-image: url(/assets/g5patt.png);
+  background-image: url(/assets/gpatt.png);
   background-position: center;
   background-size: cover;
 
@@ -116,6 +116,7 @@ a {
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
+  flex: 1;
 
   &.left {
     background-image: url(/assets/rback.png);
@@ -176,6 +177,13 @@ a {
     textarea {
       height: 128px;
       resize: none;
+    }
+
+    .hint {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      font-style: italic;
     }
 
     select {
