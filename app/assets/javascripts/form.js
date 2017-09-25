@@ -10,6 +10,10 @@
     var old_device_div = document.getElementById('old_device');
     var old_address_div = document.getElementById('old_address');
 
+    if (!new_device_div) {
+      return
+    }
+
     document.getElementById('old_device_link').addEventListener("click", function (e) {
       e.preventDefault;
       device_div.className = 'form_section old';

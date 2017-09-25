@@ -14,10 +14,11 @@
   %body
     = render 'layouts/header'
 
-    #flash
-      - if notice
+    - if notice
+      #flash
         %p= notice
-      - if alert
+    - if alert
+      #flash.alert
         %p= alert
 
     = yield
