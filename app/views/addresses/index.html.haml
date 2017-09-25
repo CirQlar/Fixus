@@ -1,1 +1,10 @@
-index
+.asection
+  - if @addresses
+    - @addresses.each do |address|
+      .address
+        %h2= address.line_1
+        - if address.line_2 != ""
+          %p= address.line_2
+        %p= address.lga
+  - else
+    %p Looks like you ain't got shit bro. Who'd a thunk it?

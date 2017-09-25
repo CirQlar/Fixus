@@ -3,6 +3,11 @@ class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update]
 
   def index
+    if user_signed_in?
+      @addresses = current_user.addresses
+    else
+      @addresses = Address.all
+    end
   end
 
   def edit
@@ -22,7 +27,7 @@ class AddressesController < ApplicationController
   private
     def set_address
       @address = Address.find(params[:id])
-      correct_user_signed_in? @address
+      authenticate_correct_user! @address
     end
 
     def address_params

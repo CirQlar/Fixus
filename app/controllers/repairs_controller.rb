@@ -3,6 +3,11 @@ class RepairsController < ApplicationController
   before_action :set_repair, only: [:show, :edit, :update]
 
   def index
+    if user_signed_in?
+      @repairs = current_user.repairs
+    else
+      @repairs = Repair.all
+    end
   end
 
   def new
@@ -51,7 +56,7 @@ class RepairsController < ApplicationController
   private
     def set_repair
       @repair = Repair.find(params[:id])
-      correct_user_signed_in? @repair
+      authenticate_correct_user! @repair
     end
 
     def repair_params

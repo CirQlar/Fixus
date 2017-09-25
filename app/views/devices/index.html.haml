@@ -1,5 +1,9 @@
-- if @devices
-  - @devices.each do |device|
-    %p= device.name
-- else
-  %p Index
+.dsection
+  - if @devices
+    - @devices.each do |device|
+      .device
+        %h2= device.name
+        %p= device.color
+        %p= device.serial_number
+  - else
+    %p Looks like you ain't got shit bro. Who'd a thunk it?

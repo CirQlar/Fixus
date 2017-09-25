@@ -225,8 +225,11 @@ a {
           span {
             text-decoration: none;
             color: inherit;
-            font-weight: 100;
+            font-weight: 300;
             cursor: pointer;
+            display: block;
+            text-align: right;
+            font-size: 12px;
           }
         }
       }

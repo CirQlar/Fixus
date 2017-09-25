@@ -1,1 +1,14 @@
-index
+.rsection
+  - if @repairs
+    - @repairs.each do |repair|
+      .repair
+        .device
+          %p= repair.device.name
+          = link_to "Go to device", device_path(repair.device)
+        .address
+          %p= repair.address.line_1
+          = link_to "Go to address", address_path(repair.address)
+        .info
+          %p= repair.info
+  - else
+    %p Looks like you ain't got shit bro. Who'd a thunk it?
