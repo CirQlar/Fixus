@@ -10,5 +10,7 @@
           = link_to "Go to address", address_path(repair.address)
         .info
           %p= repair.info
+        .status
+          %p= repair.status.humanize
   - else
     %p Looks like you ain't got shit bro. Who'd a thunk it?

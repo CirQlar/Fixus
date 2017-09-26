@@ -1,6 +1,7 @@
 class RepairsController < ApplicationController
-  before_action :authenticate_user_or_admin!
-  before_action :set_repair, only: [:show, :edit, :update]
+  before_action :authenticate_user_or_admin!, except: [:pick_up, :fix, :deliver]
+  before_action :authenticate_admin!, only: [:pick_up, :fix, :deliver]
+  before_action :set_repair, only: [:show, :edit, :update, :pick_up, :fix, :deliver, :cancel]
 
   def index
     if user_signed_in?
@@ -51,6 +52,42 @@ class RepairsController < ApplicationController
   end
 
   def show
+  end
+
+  def pick_up
+    if @repair.picked_up!
+      @repair.pick_up_time = Time.now
+      @repair.save
+      redirect_to @repair
+    end
+  end
+
+  def fix
+    if @repair.fixed!
+      @repair.fix_time = Time.now
+      @repair.save
+      redirect_to @repair
+    end
+  end
+
+  def deliver
+    if @repair.delivered!
+      @repair.deliver_time = Time.now
+      @repair.save
+      redirect_to @repair
+    end
+  end
+
+  def cancel
+    if @repair.awaiting_pick_up?
+      if @repair.cancelled!
+        @repair.cancel_time = Time.now
+        @repair.save
+        redirect_to @repair
+      end
+    else
+      redirect_to @repair, alert: "Can't cancel"
+    end
   end
 
   private

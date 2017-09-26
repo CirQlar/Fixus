@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   get 'repair/:id/edit', to: 'repairs#edit', as: 'edit_repair'
   patch 'repair/:id', to: 'repairs#update'
   put 'repair/:id', to: 'repairs#update'
+  patch 'repair/:id/pick_up', to: 'repairs#pick_up', as: 'pick_up_repair'
+  patch 'repair/:id/fix', to: 'repairs#fix', as: 'fix_repair'
+  patch 'repair/:id/deliver', to: 'repairs#deliver', as: 'deliver_repair'
+  patch 'repair/:id/cancel', to: 'repairs#cancel', as: 'cancel_repair'
+
 
   #Device routes
   get 'devices', to: 'devices#index', as: 'device_index'

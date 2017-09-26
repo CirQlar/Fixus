@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919004916) do
+ActiveRecord::Schema.define(version: 20170926174943) do
 
   create_table "addresses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -56,8 +56,14 @@ ActiveRecord::Schema.define(version: 20170919004916) do
     t.datetime "updated_at", null: false
     t.text "info"
     t.integer "user_id"
+    t.integer "status", default: 0
+    t.datetime "pick_up_time"
+    t.datetime "fix_time"
+    t.datetime "deliver_time"
+    t.datetime "cancel_time"
     t.index ["address_id"], name: "index_repairs_on_address_id"
     t.index ["device_id"], name: "index_repairs_on_device_id"
+    t.index ["status"], name: "index_repairs_on_status"
     t.index ["user_id"], name: "index_repairs_on_user_id"
   end
 
