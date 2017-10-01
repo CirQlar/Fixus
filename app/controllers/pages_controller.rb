@@ -12,4 +12,8 @@ class PagesController < ApplicationController
     #Load Contact Us page
   end
 
+  def terms
+    #Load Terms of Service
+  end
+
 end

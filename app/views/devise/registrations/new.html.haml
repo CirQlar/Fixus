@@ -9,4 +9,7 @@
         = f.input :password_confirmation, required: true
       .form-actions
         = f.button :submit, "Sign up"
+    %p.note
+      *By clicking the sign up button, you are agreeing to our
+      =link_to("Terms of Service", terms_path)
     = render "devise/shared/links"

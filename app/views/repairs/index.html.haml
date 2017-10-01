@@ -1,11 +1,14 @@
 .rsection
+  %h2 Repairs
   - if @repairs
     - @repairs.each do |repair|
       .repair
         .device
+          %h3= "Device##{repair.device.id}"
           %p= repair.device.name
           = link_to "Go to device", device_path(repair.device)
         .address
+          %h3= "Address##{repair.address.id}"
           %p= repair.address.line_1
           = link_to "Go to address", address_path(repair.address)
         .info

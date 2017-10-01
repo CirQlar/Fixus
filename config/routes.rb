@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'terms', to: 'pages#terms'
 
   #Repair routes
   get 'repairs', to: 'repairs#index', as: 'repair_index'
