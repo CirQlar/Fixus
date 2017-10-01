@@ -3,6 +3,12 @@
   - if @repairs
     - @repairs.each do |repair|
       .repair
+        %h3
+          = "Repair##{repair.id}"
+          %span
+            = repair.awaiting_pick_up? ? "Is" : "Has been"
+            = repair.status.humanize
+            = repair_status_date(repair)
         .device
           %h3= "Device##{repair.device.id}"
           %p= repair.device.name
@@ -17,3 +23,5 @@
           %p= repair.status.humanize
   - else
     %p Looks like you ain't got shit bro. Who'd a thunk it?
+
+= will_paginate @repairs
