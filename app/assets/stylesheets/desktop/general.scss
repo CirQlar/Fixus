@@ -1,10 +1,14 @@
 #flash {
   position: fixed;
   width: 100%;
-  background-color: rgb(0, 169, 157);
+  background-color: rgba(0, 169, 157, .9);
   color: white;
   padding: 8px;
   z-index: 98;
+
+  p {
+    font-weight: 400;
+  }
 }
 
 
@@ -318,27 +322,32 @@ a {
     text-align: left;
   }
 
-  .testimonial {
-    max-width: 500px;
-    margin: auto;
-    padding: 32px 0;
+  .tflex {
+    display: flex;
 
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 100%;
+    .testimonial {
+      max-width: 500px;
+      padding: 32px 0;
+      flex-basis: 0;
+      flex-grow: 1;
 
-    }
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
 
-    p {
-      font-size: 20px;
-    }
+      }
 
-    span {
-      font-size: 12px;
-      text-align: right;
-      display: block;
-      font-weight: 300;
+      p {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 12px;
+        text-align: right;
+        display: block;
+        font-weight: 300;
+      }
     }
   }
 }
