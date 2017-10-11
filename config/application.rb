@@ -18,6 +18,7 @@ module Fixus
       generate.helper false
       generate.assets false
       generate.test_framework false
+      generate.orm :active_record, primary_key_type: :uuid
     end
   end
 end

@@ -10,19 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926174943) do
+ActiveRecord::Schema.define(version: 20171011154206) do
 
-  create_table "addresses", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+  enable_extension "pgcrypto"
+
+  create_table "addresses", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "line_1"
     t.string "line_2"
     t.string "lga"
-    t.integer "user_id"
+    t.uuid "user_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -39,35 +44,35 @@ ActiveRecord::Schema.define(version: 20170926174943) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "devices", force: :cascade do |t|
+  create_table "devices", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "color"
     t.string "serial_number"
-    t.integer "user_id"
+    t.uuid "user_id"
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
-  create_table "repairs", force: :cascade do |t|
-    t.integer "device_id"
-    t.integer "address_id"
+  create_table "repairs", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "info"
-    t.integer "user_id"
     t.integer "status", default: 0
     t.datetime "pick_up_time"
     t.datetime "fix_time"
     t.datetime "deliver_time"
     t.datetime "cancel_time"
+    t.uuid "device_id"
+    t.uuid "address_id"
+    t.uuid "user_id"
     t.index ["address_id"], name: "index_repairs_on_address_id"
     t.index ["device_id"], name: "index_repairs_on_device_id"
     t.index ["status"], name: "index_repairs_on_status"
     t.index ["user_id"], name: "index_repairs_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
