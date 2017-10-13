@@ -26,7 +26,7 @@ class AddressesController < ApplicationController
 
   private
     def set_address
-      @address = Address.find(params[:id])
+      @address = Address.friendly.find(params[:id])
       authenticate_correct_user! @address
     end
 

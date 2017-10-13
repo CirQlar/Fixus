@@ -92,7 +92,7 @@ class RepairsController < ApplicationController
 
   private
     def set_repair
-      @repair = Repair.find(params[:id])
+      @repair = Repair.friendly.find(params[:id])
       authenticate_correct_user! @repair
     end
 

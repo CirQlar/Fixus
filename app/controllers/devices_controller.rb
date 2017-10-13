@@ -27,7 +27,7 @@ class DevicesController < ApplicationController
 
   private
     def set_device
-      @device = Device.find(params[:id])
+      @device = Device.friendly.find(params[:id])
       authenticate_correct_user! @device
     end
 

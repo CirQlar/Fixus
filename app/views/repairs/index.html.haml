@@ -4,7 +4,7 @@
     - @repairs.each do |repair|
       .repair
         %h3
-          = "Repair##{repair.id}"
+          = "Repair##{repair.hash_id}"
           %span
             = repair.awaiting_pick_up? ? "Is" : "Has been"
             = repair.status.humanize

@@ -1,4 +1,6 @@
 class Repair < ApplicationRecord
+  include Friendlyable
+  
   belongs_to :device
   belongs_to :address
   belongs_to :user
