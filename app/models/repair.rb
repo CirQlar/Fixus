@@ -1,6 +1,8 @@
 class Repair < ApplicationRecord
   include Friendlyable
-  
+
+  self.per_page = 4
+
   belongs_to :device
   belongs_to :address
   belongs_to :user

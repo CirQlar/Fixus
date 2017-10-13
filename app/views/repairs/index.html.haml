@@ -4,24 +4,17 @@
     - @repairs.each do |repair|
       .repair
         %h3
-          = "Repair##{repair.hash_id}"
-          %span
-            = repair.awaiting_pick_up? ? "Is" : "Has been"
-            = repair.status.humanize
-            = repair_status_date(repair)
-        .device
-          %h3= "Device##{repair.device.id}"
-          %p= repair.device.name
-          = link_to "Go to device", device_path(repair.device)
-        .address
-          %h3= "Address##{repair.address.id}"
-          %p= repair.address.line_1
-          = link_to "Go to address", address_path(repair.address)
+          = "Repair ##{repair.hash_id}"
+        %span
+          = repair.awaiting_pick_up? ? "Is" : "Has been"
+          = repair.status.humanize
+          = repair_status_date(repair)
         .info
           %p= repair.info
-        .status
-          %p= repair.status.humanize
+        .links
+          = link_to "Go to Repair", repair_path(repair)
+          = link_to "Go to Device", device_path(repair.device)
+          = link_to "Go to Address", address_path(repair.address)
   - else
     %p Looks like you ain't got shit bro. Who'd a thunk it?
-
-= will_paginate @repairs
+  = will_paginate @repairs, :previous_label => 'Previous', :next_label => 'Next'
