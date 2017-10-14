@@ -290,6 +290,12 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 
+  h2 {
+    span {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
 
   .repair {
     width: 50%;
@@ -308,12 +314,31 @@ a {
     }
 
     .info {
-      padding: 8px 0;
+      margin: 16px 0;
     }
 
     .links {
       display: flex;
       justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 12px;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
     }
   }
 }
@@ -392,7 +417,6 @@ a {
   }
 
   a:not(.next_page):not(.previous_page) {
-    background: white;
     width: 36px;
     border-radius: 100%;
 
@@ -403,6 +427,7 @@ a {
   }
 
   a.next_page, a.previous_page {
+    padding: 0 16px;
     background: white;
 
     &:hover {

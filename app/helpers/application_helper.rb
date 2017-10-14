@@ -13,6 +13,8 @@ module ApplicationHelper
       date = repair.cancel_time.to_date.to_s
     end
 
+    date.prepend("on ") unless (date == "")
+
     return date
   end
 end

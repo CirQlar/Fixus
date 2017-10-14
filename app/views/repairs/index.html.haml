@@ -1,5 +1,7 @@
 .rsection
-  %h2 Repairs
+  %h2
+    Repairs
+    %span= page_entries_info @repairs, html: false
   - if @repairs
     - @repairs.each do |repair|
       .repair
@@ -15,6 +17,12 @@
           = link_to "Go to Repair", repair_path(repair)
           = link_to "Go to Device", device_path(repair.device)
           = link_to "Go to Address", address_path(repair.address)
+        - if admin_signed_in?
+          .adminlinks
+            = link_to "Pick Up", pick_up_repair_path(repair), method: :patch
+            = link_to "Fix", fix_repair_path(repair), method: :patch
+            = link_to "Deliver", deliver_repair_path(repair), method: :patch
+            = link_to "Cancel", cancel_repair_path(repair), method: :patch
   - else
     %p Looks like you ain't got shit bro. Who'd a thunk it?
   = will_paginate @repairs, :previous_label => 'Previous', :next_label => 'Next'

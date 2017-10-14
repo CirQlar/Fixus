@@ -5,9 +5,9 @@ class RepairsController < ApplicationController
 
   def index
     if user_signed_in?
-      @repairs = current_user.repairs.paginate(page: params[:page])
+      @repairs = current_user.repairs.order('created_at DESC').paginate(page: params[:page])
     else
-      @repairs = Repair.paginate(page: params[:page])
+      @repairs = Repair.order('created_at DESC').paginate(page: params[:page])
     end
   end
 
