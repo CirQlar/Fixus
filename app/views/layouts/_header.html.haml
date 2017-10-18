@@ -1,6 +1,9 @@
 #header.cf
   %a{:href => root_path, :class => 'logo'}
-    = image_tag "fixus_logo_white", alt: "Fixus logo"
+    - if mobile_device?
+      = image_tag "fixus_icon_white", alt: "Fixus logo"
+    - else
+      = image_tag "fixus_logo_white", alt: "Fixus logo"
 
   %li#title Menu
   #nav

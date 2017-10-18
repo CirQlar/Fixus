@@ -3,7 +3,7 @@
   position: relative;
 
   .logo {
-    padding: 24px;
+    padding: 36px;
     height: 160px;
   }
 
@@ -13,7 +13,7 @@
     height: 100%;
     line-height: 160px;
     padding-right: 16px;
-    font-size: 48px;
+    font-size: 300%;
   }
 
   #nav {
@@ -24,7 +24,7 @@
 
     a {
       display: block;
-      font-size: 48px;
+      font-size: 300%;
       text-align: left;
 
       &:before {
@@ -61,7 +61,7 @@
     }
 
     span, a {
-      font-size: 48px;
+      font-size: 300%;
     }
 
     span {
@@ -85,7 +85,7 @@
   }
 
   #copyright {
-    font-size: 48px;
+    font-size: 300%;
     padding: 32px 0;
     clear: both;
   }

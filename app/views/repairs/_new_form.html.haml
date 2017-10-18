@@ -7,13 +7,11 @@
         = dev_f.input :color, placeholder: "Device color"
         = dev_f.input :serial_number, placeholder: "Device Serial Number"
       - unless @devices.empty?
-        -# = link_to "Or select from past devices", '#old_device', id: 'old_device_link', data: {'no-turbolink': ""}
         %span#old_device_link Or select from past devices
     - unless @devices.empty?
       #old_device
         %h3 Choose a device
         = f.input :device_id, collection: @devices, label_method: :name, value_method: :id, prompt: "Choose a device"
-        -# = link_to "Or fix a new device", '#new_device', id: 'new_device_link'
         %span#new_device_link Or fix a new device
   .form_section#address.new
     #new_address

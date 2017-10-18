@@ -13,14 +13,306 @@ h1 {
   font-size: 96px;
 }
 
+h2 {
+  margin: 24px 0;
+  font-size: 84px;
+}
+
+h3 {
+  margin: 24px 0;
+  font-size: 300%;
+}
+
 p {
   margin: 24px 0;
-  font-size: 48px;
+  font-size: 300%;
 }
 
 a {
   &.button {
     padding: 48px 64px;
-    font-size: 48px;
+    font-size: 300%;
   }
+}
+
+
+.fsection {
+  padding: 32px 32px;
+  background-image: url(/assets/rback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  &.form {
+    display: flex;
+  }
+}
+
+.form {
+  width: 100%;
+  text-align: left;
+  color: white;
+  margin: auto;
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .note {
+    display: block;
+    font-size: 75%;
+  }
+
+  form {
+    input, select, textarea {
+      width: 100%;
+      height: 96px;
+      margin: 16px 0;
+      font-size: 300%;
+      font-weight: 200;
+      padding: 16px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    label {
+      font-size: 300%;
+    }
+
+    textarea {
+      height: 128px;
+      resize: none;
+    }
+
+    .hint {
+      display: block;
+      text-align: right;
+      font-size: 75%;
+      font-style: italic;
+    }
+
+
+    select {
+      background-color: white;
+    }
+
+    input[type=checkbox] {
+      width: 48px;
+      height: 48px;
+      margin: 16px 16px 16px 0;
+    }
+
+    .form_section {
+      &#device, &#address {
+        width: 100%;
+        position: relative;
+
+        &.new {
+          #new_device, #new_address {
+            display: block;
+          }
+
+          #old_device, #old_address {
+            display: none;
+          }
+        }
+
+        &.old {
+          #new_device, #new_address {
+            display: none;
+          }
+
+          #old_device, #old_address {
+            display: block;
+          }
+        }
+
+        #new_device, #new_address, #old_device, #old_address {
+          span {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 300;
+            cursor: pointer;
+            display: block;
+            text-align: right;
+            font-size: 75%;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+
+      input {
+        background-color: #22b573;
+        border: none;
+        color: white;
+        font-weight: 400;
+        cursor: pointer;
+        height: 96px;
+        font-size: 300%;
+        text-transform: uppercase;
+
+      }
+    }
+  }
+}
+
+
+.rsection {
+  width: 100%;
+  padding: 32px 32px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h2 {
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+  }
+
+  .repair {
+    width: 100%;
+    background-color: white;
+    padding: 20px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 15px -5px black;
+
+    h3 {
+      font-weight: 400;
+    }
+
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+
+  h3 {
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .tflex {
+    display: flex;
+    flex-direction: column;
+
+    .testimonial {
+      max-width: 500px;
+      padding: 32px 0;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 75%;
+        text-align: right;
+        display: block;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  a, span, em {
+    display: inline-block;
+    line-height: 36px;
+    text-align: center;
+    font-weight: 300;
+    height: 36px;
+  }
+
+  em {
+    width: 36px;
+    border-radius: 100%;
+  }
+
+  a:not(.next_page):not(.previous_page) {
+    width: 36px;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: #00A99D;
+      color: white;
+    }
+  }
+
+  a.next_page, a.previous_page {
+    padding: 0 16px;
+
+    &:hover {
+      color: #00A99D;
+    }
+  }
+
+  span {
+    padding: 0 16px;
+
+    &.disabled {
+      color: #c0c0c0;
+    }
+  }
+
+  em {
+    background: #22B573;
+    color: white;
+    font-style: inherit;
+    text-decoration: none;
+  }
+
 }
