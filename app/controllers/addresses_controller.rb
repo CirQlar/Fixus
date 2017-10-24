@@ -4,9 +4,9 @@ class AddressesController < ApplicationController
 
   def index
     if user_signed_in?
-      @addresses = current_user.addresses
+      @addresses = current_user.addresses.order('created_at DESC').paginate(page: params[:page])
     else
-      @addresses = Address.all
+      @addresses = Address.order('created_at DESC').paginate(page: params[:page])
     end
   end
 

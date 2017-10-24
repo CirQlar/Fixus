@@ -1,12 +1,74 @@
 .banner {
   align-items: center;
   text-align: center;
-  padding: 0 32px;
+  padding: 32px 32px;
+  background-image: url(/assets/gpatt.png);
+  background-position: center;
+  background-size: cover;
+
+  .cont {
+    background-color: rgba(255,255,255,.7);
+    padding: 16px;
+  }
+
+  .big {
+    width: 40vh;
+    height: 40vh;
+    border-radius: 100%;
+    margin-bottom: 32px;
+    overflow: hidden;
+    padding: 7.5vh;
+    box-shadow: inset 5px 5px 30px -5px #333333;
+    background-color: white;
+
+    img {
+      width: 100%;
+    }
+  }
 
   a {
     margin: 24px 0;
   }
 }
+
+.section {
+  width: 100%;
+  padding: 32px 32px;
+  position: relative;
+
+  .divide {
+    display: none;
+  }
+
+  .right,.left {
+    width: 100%;
+
+    .image {
+      width: 60%;
+      padding: 32px;
+      margin: auto;
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+
+    .cont {
+      width: 100%;
+      text-align: center;
+
+      h2 {
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 100%;
+      }
+    }
+  }
+}
+
 
 h1 {
   margin: 24px 0;
@@ -161,7 +223,7 @@ a {
 }
 
 
-.rsection {
+.rsection, .dsection, .asection {
   width: 100%;
   padding: 32px 32px;
   position: relative;
@@ -171,14 +233,25 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 
+  p.fillpage {
+    font-size: 150%
+  }
+
+
   h2 {
     span {
-      font-size: 75%;
+      font-size: 25%;
       font-weight: 300;
     }
   }
 
-  .repair {
+  .device, .address {
+    p {
+      font-size: 250%;
+    }
+  }
+
+  .repair, .device, .address {
     width: 100%;
     background-color: white;
     padding: 20px 32px;
@@ -196,6 +269,13 @@ a {
 
     .info {
       margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
     }
 
     .links {
@@ -204,6 +284,8 @@ a {
       margin: 8px 0;
 
       a {
+        font-size: 250%;
+
         &:hover {
           color: #00A99D;
         }
@@ -224,9 +306,94 @@ a {
   }
 }
 
+.rssection, .dssection, .assection {
+  width: 100%;
+  padding: 32px 32px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  p.fillpage {
+    font-size: 150%
+  }
+
+
+  h2 {
+    span {
+      font-size: 25%;
+      font-weight: 300;
+    }
+  }
+
+  .device, .address {
+    p {
+      font-size: 250%;
+    }
+  }
+
+  .repair, .device, .address {
+    width: 100%;
+    padding: 20px 32px;
+    background-color: white;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 15px -5px black;
+
+    h3 {
+      font-weight: 400;
+      font-size: 450%;
+    }
+
+    span {
+      font-size: 200%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        font-size: 250%;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+  }
+}
+
+
 .testimonials {
   width: 100%;
-  padding: 32px 128px;
+  padding: 32px 32px;
   position: relative;
 
   h3 {
@@ -239,14 +406,14 @@ a {
     flex-direction: column;
 
     .testimonial {
-      max-width: 500px;
+      width: 100%;
       padding: 32px 0;
       flex-basis: 0;
       flex-grow: 1;
 
       img {
-        width: 150px;
-        height: 150px;
+        width: 300px;
+        height: 300px;
         border-radius: 100%;
 
       }
@@ -265,25 +432,48 @@ a {
   }
 }
 
+.tsection {
+  width: 100%;
+  padding: 32px 64px;
+  position: relative;
+  text-align: left;
+
+  p {
+    margin: 8px 0 24px 0;
+    font-size: 100%;
+  }
+
+  h3, h4 {
+    font-weight: 400;
+    margin-top: 64px;
+  }
+
+  h2, h3, h4 {
+    text-transform: uppercase;
+  }
+}
+
+
 .pagination {
   display: flex;
   justify-content: center;
 
   a, span, em {
     display: inline-block;
-    line-height: 36px;
+    line-height: 60px;
     text-align: center;
     font-weight: 300;
-    height: 36px;
+    height: 60px;
+    font-size: 300%;
   }
 
   em {
-    width: 36px;
+    width: 60px;
     border-radius: 100%;
   }
 
   a:not(.next_page):not(.previous_page) {
-    width: 36px;
+    width: 60px;
     border-radius: 100%;
 
     &:hover {
@@ -293,7 +483,7 @@ a {
   }
 
   a.next_page, a.previous_page {
-    padding: 0 16px;
+    padding: 0 32px;
 
     &:hover {
       color: #00A99D;
@@ -301,7 +491,7 @@ a {
   }
 
   span {
-    padding: 0 16px;
+    padding: 0 32px;
 
     &.disabled {
       color: #c0c0c0;

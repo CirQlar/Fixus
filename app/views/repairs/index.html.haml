@@ -1,8 +1,8 @@
 .rsection
-  %h2
-    Repairs
-    %span= page_entries_info @repairs, html: false
-  - if @repairs
+  - unless @repairs.empty?
+    %h2
+      Repairs
+      %span= page_entries_info @repairs, html: false
     - @repairs.each do |repair|
       .repair
         %h3
@@ -24,5 +24,9 @@
             = link_to "Deliver", deliver_repair_path(repair), method: :patch
             = link_to "Cancel", cancel_repair_path(repair), method: :patch
   - else
-    %p Looks like you ain't got shit bro. Who'd a thunk it?
+    %p.fillpage
+      = "Looks like you don't have any devices. "
+      = link_to("Click here", new_repair_path)
+      = " to repair one."
+
   = will_paginate @repairs, :previous_label => 'Previous', :next_label => 'Next'

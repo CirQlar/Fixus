@@ -14,6 +14,7 @@
 
 .banner {
   align-items: left;
+  height: 70vh;
   text-align: left;
   padding: 0 128px;
   background-image: url(/assets/gpatt.png);
@@ -280,69 +281,6 @@ a {
   }
 }
 
-.rsection {
-  width: 100%;
-  padding: 32px 128px;
-  position: relative;
-  text-align: left;
-  background-image: url(/assets/rwback.png);
-  background-position: right;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  h2 {
-    span {
-      font-size: 75%;
-      font-weight: 300;
-    }
-  }
-
-  .repair {
-    width: 50%;
-    background: white;
-    padding: 20px 32px;
-    margin-bottom: 32px;
-    box-shadow: 0px 0px 5px -2px black;
-
-    h3 {
-      font-weight: 400;
-    }
-
-    span {
-      font-size: 75%;
-      font-weight: 300;
-    }
-
-    .info {
-      margin: 16px 0;
-    }
-
-    .links {
-      display: flex;
-      justify-content: space-between;
-      margin: 8px 0;
-
-      a {
-        &:hover {
-          color: #00A99D;
-        }
-      }
-    }
-
-    .adminlinks {
-      font-size: 75%;
-
-      a {
-        margin-right: 16px;
-
-        &:hover {
-          color: #00A99D;
-        }
-      }
-    }
-  }
-}
-
 .tsection {
   width: 100%;
   padding: 32px 128px;
@@ -449,4 +387,156 @@ a {
     text-decoration: none;
   }
 
+}
+
+.rsection, .dsection, .asection {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  p.fillpage {
+    font-size: 150%
+  }
+
+  h2 {
+    span {
+      margin-left: 8px;
+      font-size: 55%;
+      font-weight: 300;
+    }
+  }
+
+  .repair, .device, .address {
+    width: 50%;
+    background: white;
+    padding: 20px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 5px -2px black;
+
+    h3 {
+      font-weight: 400;
+    }
+
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+  }
+}
+
+.rssection, .dssection, .assection {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  p.fillpage {
+    font-size: 150%
+  }
+
+  h2 {
+    span {
+      margin-left: 8px;
+      font-size: 55%;
+      font-weight: 300;
+    }
+  }
+
+  .repair, .device, .address {
+    width: 50%;
+    background: white;
+    padding: 20px 32px;
+    margin-bottom: 32px;
+
+    h3 {
+      font-weight: 400;
+      font-size: 250%;
+    }
+
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+  }
 }

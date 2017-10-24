@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'device/:id/edit', to: 'devices#edit', as: 'edit_device'
   patch 'device/:id', to: 'devices#update'
   put 'device/:id', to: 'devices#update'
+  get 'device/:id/fix', to: 'devices#fix', as: 'fix_device'
 
   #Address routes
   get 'addresses', to: 'addresses#index', as: 'address_index'

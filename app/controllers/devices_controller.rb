@@ -1,12 +1,12 @@
 class DevicesController < ApplicationController
   before_action :authenticate_user_or_admin!
-  before_action :set_device, only: [:show, :edit, :update]
+  before_action :set_device, only: [:show, :edit, :update, :fix]
 
   def index
     if user_signed_in?
-      @devices = current_user.devices
+      @devices = current_user.devices.order('created_at DESC').paginate(page: params[:page])
     else
-      @devices = Device.all
+      @devices = Device.order('created_at DESC').paginate(page: params[:page])
     end
   end
 
@@ -23,6 +23,22 @@ class DevicesController < ApplicationController
 
   def show
 
+  end
+
+  def fix
+    @repair = Repair.new
+    @repair.address = Address.new
+    @repair.device = @device
+
+    if user_signed_in?
+      @repair.user = current_user
+      @addresses = current_user.addresses
+      @devices = current_user.devices
+    else
+      @repair.user = User.new
+      @addresses = []
+      @devices = []
+    end
   end
 
   private

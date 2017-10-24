@@ -1,9 +1,34 @@
 .dsection
-  - if @devices
+  - unless @devices.empty?
+    %h2
+      Devices
+      %span= page_entries_info @devices, html: false
     - @devices.each do |device|
       .device
-        %h2= device.name
-        %p= device.color
-        %p= device.serial_number
+        %h3
+          = "Device ##{device.hash_id}"
+        .info
+          %p
+            %span= "Name:   "
+            = device.name
+          %p
+            %span= "Color:   "
+            = device.color
+          %p
+            %span= "Serial No:   "
+            = device.serial_number
+        .links
+          = link_to "Go to Device", device_path(device)
+          - if device.is_being_repaired?
+            = link_to "Go to Repair", repair_path(device.repairs.last)
+            = link_to "Go to Address", address_path(device.repairs.last.address)
+          - else
+            = link_to "Fix Device", fix_device_path(device)
+          = link_to "Edit Device", edit_device_path(device)
   - else
-    %p Looks like you ain't got shit bro. Who'd a thunk it?
+    %p.fillpage
+      = "Looks like you don't have any devices. "
+      = link_to("Click here", new_repair_path)
+      = " to repair one."
+
+  = will_paginate @devices, :previous_label => 'Previous', :next_label => 'Next'

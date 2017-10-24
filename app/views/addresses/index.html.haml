@@ -1,10 +1,30 @@
 .asection
-  - if @addresses
+  - unless @addresses.empty?
+    %h2
+      Addresses
+      %span= page_entries_info @addresses, html: false
     - @addresses.each do |address|
       .address
-        %h2= address.line_1
-        - if address.line_2 != ""
-          %p= address.line_2
-        %p= address.lga
+        %h3
+          = "Address ##{address.hash_id}"
+        .info
+          %p
+            %span= "Line 1:   "
+            = address.line_1
+          - if address.line_2 != ""
+            %p
+              %span= "Line 2:   "
+              = address.line_2
+          %p
+            %span= "Local Govt Area:   "
+            = address.lga
+        .links
+          = link_to "Go to Address", address_path(address)
+          = link_to "Edit Address", edit_address_path(address)
   - else
-    %p Looks like you ain't got shit bro. Who'd a thunk it?
+    %p.fillpage
+      = "Looks like you don't have any addresses. "
+      = link_to("Click here", new_repair_path)
+      = " to order a repair."
+
+  = will_paginate @addresses, :previous_label => 'Previous', :next_label => 'Next'

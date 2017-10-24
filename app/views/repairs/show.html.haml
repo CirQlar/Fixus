@@ -1,22 +1,19 @@
-%h1 View a repair
-%p
-  City:
-  %br
-  = @repair.address.line_1
-%p
-  Device Name:
-  %br
-  = @repair.device.name
-%p
-  Extra Info:
-  %br
-  = @repair.info
-%p
-  Status:
-  %br
-  = @repair.status.humanize
-
-= link_to "Pick up", pick_up_repair_path, method: :patch
-= link_to "Fix", fix_repair_path, method: :patch
-= link_to "Deliver", deliver_repair_path, method: :patch
-= link_to "Cancel", cancel_repair_path, method: :patch
+.rssection
+  .repair
+    %h3
+      = "Repair ##{@repair.hash_id}"
+    %span
+      = @repair.awaiting_pick_up? ? "Is" : "Has been"
+      = @repair.status.humanize
+      = repair_status_date(@repair)
+    .info
+      %p= @repair.info
+    .links
+      = link_to "Go to Device", device_path(@repair.device)
+      = link_to "Go to Address", address_path(@repair.address)
+    - if admin_signed_in?
+      .adminlinks
+        = link_to "Pick Up", pick_up_repair_path(@repair), method: :patch
+        = link_to "Fix", fix_repair_path(@repair), method: :patch
+        = link_to "Deliver", deliver_repair_path(@repair), method: :patch
+        = link_to "Cancel", cancel_repair_path(@repair), method: :patch
