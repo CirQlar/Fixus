@@ -26,6 +26,7 @@
       display: block;
       font-size: 300%;
       text-align: left;
+      font-weight: 400;
 
       &:before {
         content: "";
@@ -34,6 +35,12 @@
         margin: 32px 0;
         border: 1px solid rgba(255, 255, 255, 0.5);
       }
+    }
+  }
+
+  &.open {
+    #nav {
+      display: block;
     }
   }
 }

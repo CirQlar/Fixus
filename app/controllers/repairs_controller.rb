@@ -55,26 +55,38 @@ class RepairsController < ApplicationController
   end
 
   def pick_up
-    if @repair.picked_up!
-      @repair.pick_up_time = Time.now
-      @repair.save
-      redirect_to @repair
+    if @repair.awaiting_pick_up?
+      if @repair.picked_up!
+        @repair.pick_up_time = Time.now
+        @repair.save
+        redirect_to @repair, notice: "Successfully picked up"
+      end
+    else
+      redirect_to @repair, alert: "Can't pick up"
     end
   end
 
   def fix
-    if @repair.fixed!
-      @repair.fix_time = Time.now
-      @repair.save
-      redirect_to @repair
+    if @repair.picked_up?
+      if @repair.fixed!
+        @repair.fix_time = Time.now
+        @repair.save
+        redirect_to @repair, notice: "Successfully fixed"
+      end
+    else
+      redirect_to @repair, alert: "Can't fix"
     end
   end
 
   def deliver
-    if @repair.delivered!
-      @repair.deliver_time = Time.now
-      @repair.save
-      redirect_to @repair
+    if @repair.fixed?
+      if @repair.delivered!
+        @repair.deliver_time = Time.now
+        @repair.save
+        redirect_to @repair, notice: "Successfully delivered"
+      end
+    else
+      redirect_to @repair, alert: "Can't deliver"
     end
   end
 
@@ -83,7 +95,7 @@ class RepairsController < ApplicationController
       if @repair.cancelled!
         @repair.cancel_time = Time.now
         @repair.save
-        redirect_to @repair
+        redirect_to @repair, notice: "Successfully cancelled"
       end
     else
       redirect_to @repair, alert: "Can't cancel"
