@@ -1,0 +1,33 @@
+= simple_form_for @repair do |f|
+  .form_section#device.new
+    #new_device
+      %h3 Enter your device details
+      = f.simple_fields_for :device do |dev_f|
+        = dev_f.input :name, placeholder: "Device name"
+        = dev_f.input :color, placeholder: "Device color"
+        = dev_f.input :serial_number, placeholder: "Device Serial Number"
+      - unless @devices.empty?
+        %span#old_device_link Or select from past devices
+    - unless @devices.empty?
+      #old_device
+        %h3 Choose a device
+        = f.input :device_id, collection: @devices, label_method: :name, value_method: :id, prompt: "Choose a device"
+        %span#new_device_link Or fix a new device
+  .form_section#address.new
+    #new_address
+      %h3 Enter your address
+      = f.simple_fields_for :address do |add_f|
+        = add_f.input :line_1, placeholder: "Address Line 1"
+        = add_f.input :line_2, placeholder: "Address Line 2"
+        = add_f.input :lga, placeholder: "Local Government Area"
+      - unless @addresses.empty?
+        %span#old_address_link Or select from past addresses
+    - unless @addresses.empty?
+      #old_address
+        %h3 Choose an address
+        = f.input :address_id, collection: @addresses, label_method: :line_1, value_method: :id, prompt: "Choose an address"
+        %span#new_address_link Or add a new address
+  .form_section
+    = f.input :info, placeholder: "Extra info about your issue"
+  .form-actions
+    = f.button :submit

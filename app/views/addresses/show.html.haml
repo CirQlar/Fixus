@@ -1,0 +1,17 @@
+.assection
+  .address
+    %h3
+      = "Address ##{@address.hash_id}"
+    .info
+      %p
+        %span= "Line 1:   "
+        = @address.line_1
+      - if @address.line_2 != ""
+        %p
+          %span= "Line 2:   "
+          = @address.line_2
+      %p
+        %span= "Local Govt Area:   "
+        = @address.lga
+    .links
+      = link_to "Edit Address", edit_address_path(@address)

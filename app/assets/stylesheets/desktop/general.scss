@@ -1,16 +1,126 @@
+#flash {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 169, 157, .9);
+  color: white;
+  padding: 8px;
+  z-index: 98;
+
+  p {
+    font-weight: 400;
+  }
+}
+
+
 .banner {
   align-items: left;
+  height: 70vh;
   text-align: left;
   padding: 0 128px;
+  background-image: url(/assets/gpatt.png);
+  background-position: center;
+  background-size: cover;
 
-  a {
-    margin: 8px 0;
+  .cont {
+    background-color: rgba(255,255,255,.7);
+    padding: 16px;
+
+    a {
+      margin: 8px 0;
+    }
+  }
+
+  .big {
+    position: absolute;
+    right: 192px;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 10vh;
+    box-shadow: inset 1px 1px 10px -2px #333333;
+    background-color: white;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+
+  .divide {
+    position: absolute;
+    width: 0px;
+    height: 80%;
+    left: 50%;
+    top: 10%;
+    border: 1px solid #e3e3e3;
+  }
+
+  .right,.left {
+    width: 50%;
+    display: flex;
+
+    .image {
+      width: 50%;
+      padding: 32px;
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+    .cont {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .left {
+    float: left;
+    flex-direction: row-reverse;
+
+    .cont {
+      text-align: right;
+    }
+  }
+
+  .right {
+    float: right;
+
+    .cont {
+      text-align: left;
+    }
   }
 }
 
 h1 {
   margin: 8px 0;
-  font-size: 48px;
+  font-size: 300%;
+}
+
+h2 {
+  margin: 8px 0;
+  font-size: 200%;
+}
+
+h3 {
+  margin: 4px 0;
+  font-size: 150%;
+}
+
+h4 {
+  margin: 4px 0;
+}
+
+h5 {
+  margin: 4px 0;
 }
 
 p {
@@ -20,5 +130,413 @@ p {
 a {
   &.button {
     padding: 16px 24px;
+  }
+}
+
+.fsection {
+  padding: 32px 128px;
+  background-image: url(/assets/dback.png);
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  &.left {
+    background-image: url(/assets/rback.png);
+    background-position: right;
+    background-size: cover;
+
+    .form {
+      margin: 0 auto 0 0;
+
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+
+  &.right {
+    background-image: url(/assets/lback.png);
+    background-position: left;
+    background-size: cover;
+
+    .form {
+      margin: 0 0 0 auto;
+
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+
+  &.form {
+    display: flex;
+  }
+}
+
+.form {
+  width: 416px;
+  padding: 4px 16px 16px;
+  text-align: left;
+  color: white;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .note {
+    display: block;
+    font-size: 75%;
+  }
+
+  form {
+    input, select, textarea {
+      width: 100%;
+      height: 32px;
+      margin: 4px 0;
+      font-weight: 200;
+      padding: 4px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    textarea {
+      height: 128px;
+      resize: none;
+    }
+
+    .hint {
+      display: block;
+      text-align: right;
+      font-size: 75%;
+      font-style: italic;
+    }
+
+
+    select {
+      background-color: white;
+    }
+
+    input[type=checkbox] {
+      width: auto;
+      height: auto;
+      margin: 8px 8px 8px 0;
+    }
+
+    .form_section {
+      &#device, &#address {
+        width: 100%;
+        position: relative;
+
+        &.new {
+          #new_device, #new_address {
+            display: block;
+          }
+
+          #old_device, #old_address {
+            display: none;
+          }
+        }
+
+        &.old {
+          #new_device, #new_address {
+            display: none;
+          }
+
+          #old_device, #old_address {
+            display: block;
+          }
+        }
+
+        #new_device, #new_address, #old_device, #old_address {
+          span {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 300;
+            cursor: pointer;
+            display: block;
+            text-align: right;
+            font-size: 75%;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+
+      input {
+        background-color: #22b573;
+        border: none;
+        color: white;
+        font-weight: 400;
+        cursor: pointer;
+        height: 34px;
+        text-transform: uppercase;
+
+      }
+    }
+  }
+}
+
+.tsection {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+  text-align: left;
+
+  p {
+    margin: 8px 0 24px 0;
+  }
+
+  h3, h4 {
+    font-weight: 400;
+  }
+
+  h2, h3, h4 {
+    text-transform: uppercase;
+  }
+}
+
+.testimonials {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+
+  h3 {
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .tflex {
+    display: flex;
+
+    .testimonial {
+      max-width: 500px;
+      padding: 32px 0;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 75%;
+        text-align: right;
+        display: block;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.pagination {
+  a, span, em {
+    display: inline-block;
+    line-height: 36px;
+    text-align: center;
+    font-weight: 300;
+    height: 36px;
+  }
+
+  em {
+    width: 36px;
+    border-radius: 100%;
+  }
+
+  a:not(.next_page):not(.previous_page) {
+    width: 36px;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: #00A99D;
+      color: white;
+    }
+  }
+
+  a.next_page, a.previous_page {
+    padding: 0 16px;
+
+    &:hover {
+      color: #00A99D;
+    }
+  }
+
+  span {
+    padding: 0 16px;
+
+    &.disabled {
+      color: #c0c0c0;
+    }
+  }
+
+  em {
+    background: #22B573;
+    color: white;
+    font-style: inherit;
+    text-decoration: none;
+  }
+
+}
+
+.rsection, .dsection, .asection {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  p.fillpage {
+    font-size: 150%
+  }
+
+  h2 {
+    span {
+      margin-left: 8px;
+      font-size: 55%;
+      font-weight: 300;
+    }
+  }
+
+  .repair, .device, .address {
+    width: 50%;
+    background: white;
+    padding: 20px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 5px -2px black;
+
+    h3 {
+      font-weight: 400;
+    }
+
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+  }
+}
+
+.rssection, .dssection, .assection {
+  width: 100%;
+  padding: 32px 128px;
+  position: relative;
+  text-align: left;
+  background-image: url(/assets/rwback.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  p.fillpage {
+    font-size: 150%
+  }
+
+  h2 {
+    span {
+      margin-left: 8px;
+      font-size: 55%;
+      font-weight: 300;
+    }
+  }
+
+  .repair, .device, .address {
+    width: 50%;
+    background: white;
+    padding: 20px 32px;
+    margin-bottom: 32px;
+
+    h3 {
+      font-weight: 400;
+      font-size: 250%;
+    }
+
+    span {
+      font-size: 75%;
+      font-weight: 300;
+    }
+
+    .info {
+      margin: 16px 0;
+
+      p {
+        span {
+          font-size: 100%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      a {
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
+
+    .adminlinks {
+      font-size: 75%;
+
+      a {
+        margin-right: 16px;
+
+        &:hover {
+          color: #00A99D;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,9 @@
+= simple_form_for @repair do |f|
+  .form_section#device
+    = link_to "Edit Device Details", edit_device_path(@repair.device)
+  .form_section#address
+    = link_to "Edit Address Details", edit_address_path(@repair.address)
+  .form_section
+    = f.input :info
+  .actions
+    = f.button :submit

@@ -19,5 +19,25 @@ class ApplicationController < ActionController::Base
     prepare_for_mobile if mobile_device?
   end
 
+  def authenticate_user_or_admin!
+    unless user_or_admin_signed_in?
+        redirect_to new_user_session_path
+    end
+  end
+
+  def user_or_admin_signed_in?
+    unless admin_signed_in?
+      return user_signed_in?
+    end
+    return true
+  end
+
+  def authenticate_correct_user!(obj)
+    if user_signed_in?
+      redirect_to root_path unless (obj.user == current_user)
+    end
+  end
+
   helper_method :mobile_device?
+  helper_method :user_or_admin_signed_in?
 end

@@ -1,0 +1,21 @@
+.dssection
+  .device
+    %h3
+      = "Device ##{@device.hash_id}"
+    .info
+      %p
+        %span= "Name:   "
+        = @device.name
+      %p
+        %span= "Color:   "
+        = @device.color
+      %p
+        %span= "Serial No:   "
+        = @device.serial_number
+    .links
+      - if @device.is_being_repaired?
+        = link_to "Go to Repair", repair_path(@device.repairs.last)
+        = link_to "Go to Address", address_path(@device.repairs.last.address)
+      - else
+        = link_to "Fix Device", fix_device_path(@device)
+      = link_to "Edit Device", edit_device_path(@device)

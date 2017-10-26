@@ -1,10 +1,22 @@
 #header.cf
   %a{:href => root_path, :class => 'logo'}
-    = image_tag "logo_white", alt: "Fixus logo"
+    - if mobile_device?
+      = image_tag "fixus_icon_white", alt: "Fixus logo"
+    - else
+      = image_tag "fixus_logo_white", alt: "Fixus logo"
 
   %li#title Menu
   #nav
-    = link_to "Services", '#'
-    = link_to "Products", '#'
-    = link_to "Log in", '#'
-    = link_to "Sign up", '#'
+    - if user_or_admin_signed_in?
+      = link_to "Repairs", repair_index_path
+      = link_to "Devices", device_index_path
+      = link_to "Addresses", address_index_path
+    - if user_signed_in?
+      = link_to "Sign Out", destroy_user_session_path, method: :delete
+    - elsif admin_signed_in?
+      = link_to "Sign Out", destroy_admin_session_path, method: :delete
+    - else
+      = link_to "Services", '#'
+      = link_to "Products", '#'
+      = link_to "Log in", new_user_session_path
+      = link_to "Sign up", new_user_registration_path

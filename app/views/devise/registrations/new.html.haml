@@ -1,0 +1,15 @@
+.fsection
+  .form
+    %h2 Sign up
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+        = f.input :password_confirmation, required: true
+      .form-actions
+        = f.button :submit, "Sign up"
+    %p.note
+      *By clicking the sign up button, you are agreeing to our
+      =link_to("Terms of Service", terms_path)
+    = render "devise/shared/links"
