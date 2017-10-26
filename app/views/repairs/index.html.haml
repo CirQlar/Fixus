@@ -1,0 +1,32 @@
+.rsection
+  - unless @repairs.empty?
+    %h2
+      Repairs
+      %span= page_entries_info @repairs, html: false
+    - @repairs.each do |repair|
+      .repair
+        %h3
+          = "Repair ##{repair.hash_id}"
+        %span
+          = repair.awaiting_pick_up? ? "Is" : "Has been"
+          = repair.status.humanize
+          = repair_status_date(repair)
+        .info
+          %p= repair.info
+        .links
+          = link_to "Go to Repair", repair_path(repair)
+          = link_to "Go to Device", device_path(repair.device)
+          = link_to "Go to Address", address_path(repair.address)
+        - if admin_signed_in?
+          .adminlinks
+            = link_to "Pick Up", pick_up_repair_path(repair), method: :patch
+            = link_to "Fix", fix_repair_path(repair), method: :patch
+            = link_to "Deliver", deliver_repair_path(repair), method: :patch
+            = link_to "Cancel", cancel_repair_path(repair), method: :patch
+  - else
+    %p.fillpage
+      = "Looks like you don't have any devices. "
+      = link_to("Click here", new_repair_path)
+      = " to repair one."
+
+  = will_paginate @repairs, :previous_label => 'Previous', :next_label => 'Next'

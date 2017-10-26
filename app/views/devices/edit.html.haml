@@ -1,0 +1,10 @@
+.fsection
+  .form
+    %h2 Edit Device
+    = simple_form_for @device do |f|
+      = f.input :name, placeholder: "Device Name"
+      = f.input :color, placeholder: "Device Color"
+      = f.input :serial_number, placeholder: "Device Serial Number"
+      .form-actions
+        = f.button :submit
+    = link_to "Fix Device", fix_device_path(@device)

@@ -1,0 +1,9 @@
+.fsection
+  .form
+    %h2 Edit Address
+    = simple_form_for @address do |f|
+      = f.input :line_1, placeholder: "Line 1"
+      = f.input :line_2, placeholder: "Line 2"
+      = f.input :lga, placeholder: "Local Government Area"
+      .form-actions
+        = f.button :submit
