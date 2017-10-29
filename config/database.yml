@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: Fixus_production
+  database: fixus_production
   username: <%= ENV['FIXUS_DATABASE_USER'] %>
   password: <%= ENV['FIXUS_DATABASE_PASSWORD'] %>
