@@ -1,2 +1,47 @@
-%h1 Users#dashboard
-%p Find me in app/views/users/dashboard.html.haml
+.dashboard
+  %h2 Dashboard
+  - if @repair
+    .repair
+      %h3
+        = "Repair ##{@repair.hash_id}"
+      %span
+        = @repair.awaiting_pick_up? ? "Is" : "Has been"
+        = @repair.status.humanize
+        = repair_status_date(@repair)
+      .info
+        %p= @repair.info
+      .device
+        %h3
+          = link_to "Device ##{@device.hash_id}", device_path(@device)
+        .info
+          %p
+            %span= "Name:   "
+            = @device.name
+          %p
+            %span= "Color:   "
+            = @device.color
+          %p
+            %span= "Serial No:   "
+            = @device.serial_number
+      .address
+        %h3
+          = link_to "Address ##{@address.hash_id}", address_path(@address)
+        .info
+          %p
+            %span= "Line 1:   "
+            = @address.line_1
+          - if @address.line_2 != ""
+            %p
+              %span= "Line 2:   "
+              = @address.line_2
+          %p
+            %span= "Local Govt Area:   "
+            = @address.lga
+      .links
+        = link_to "Go to Repair", repair_path(@repair)
+        = link_to "View all Repairs", repairs_path
+  - else
+    %p.fillpage
+      = "Looks like you don't have any repairs. "
+      = link_to("Click here", new_repair_path)
+      = " to order one."
