@@ -25,8 +25,8 @@
             = link_to "Cancel", cancel_repair_path(repair), method: :patch
   - else
     %p.fillpage
-      = "Looks like you don't have any devices. "
+      = "Looks like you don't have any repairs. "
       = link_to("Click here", new_repair_path)
-      = " to repair one."
+      = " to order one."
 
   = will_paginate @repairs, :previous_label => 'Previous', :next_label => 'Next'
