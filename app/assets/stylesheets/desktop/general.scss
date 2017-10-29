@@ -17,7 +17,7 @@
   height: 70vh;
   text-align: left;
   padding: 0 128px;
-  background-image: url(/assets/gpatt.png);
+  background-image: url(image_path("gpatt.png"));
   background-position: center;
   background-size: cover;
 
@@ -135,14 +135,14 @@ a {
 
 .fsection {
   padding: 32px 128px;
-  background-image: url(/assets/dback.png);
+  background-image: url(image_path("dback.png"));
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
   flex: 1;
 
   &.left {
-    background-image: url(/assets/rback.png);
+    background-image: url(image_path("rback.png"));
     background-position: right;
     background-size: cover;
 
@@ -156,7 +156,7 @@ a {
   }
 
   &.right {
-    background-image: url(/assets/lback.png);
+    background-image: url(image_path("lback.png"));
     background-position: left;
     background-size: cover;
 
@@ -394,7 +394,7 @@ a {
   padding: 32px 128px;
   position: relative;
   text-align: left;
-  background-image: url(/assets/rwback.png);
+  background-image: url(image_path("rwback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -470,7 +470,7 @@ a {
   padding: 32px 128px;
   position: relative;
   text-align: left;
-  background-image: url(/assets/rwback.png);
+  background-image: url(image_path("rwback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -546,7 +546,7 @@ a {
   padding: 32px 128px;
   position: relative;
   text-align: left;
-  background-image: url(/assets/rwback.png);
+  background-image: url(image_path("rwback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
