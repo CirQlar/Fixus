@@ -43,8 +43,8 @@
 
   var input_or_div = function (elem) {
     if (elem.tagName == "DIV") {
-      for (var child of elem.children) {
-        input_or_div(child);
+      for (var i = 0; i < elem.children.length; i++) {
+        input_or_div(elem.children[i]);
       }
     } else if (elem.tagName == "INPUT" || elem.tagName == "SELECT") {
       elem.value = "";
