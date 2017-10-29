@@ -2,7 +2,7 @@
   align-items: center;
   text-align: center;
   padding: 32px 32px;
-  background-image: url(/assets/gpatt.png);
+  background-image: url(image_path("gpatt.png"));
   background-position: center;
   background-size: cover;
 
@@ -100,7 +100,7 @@ a {
 
 .fsection {
   padding: 32px 32px;
-  background-image: url(/assets/rback.png);
+  background-image: url(image_path("rback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -228,7 +228,7 @@ a {
   padding: 32px 32px;
   position: relative;
   text-align: left;
-  background-image: url(/assets/rwback.png);
+  background-image: url(image_path("rwback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -311,7 +311,7 @@ a {
   padding: 32px 32px;
   position: relative;
   text-align: left;
-  background-image: url(/assets/rwback.png);
+  background-image: url(image_path("rwback.png"));
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;

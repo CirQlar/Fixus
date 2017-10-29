@@ -1,0 +1,11 @@
+.fsection.right
+  .form
+    %h2 Become a Rep
+    = simple_form_for @rep do |f|
+      = f.input :name, placeholder: "Full Name"
+      = f.input :email, placeholder: "Email"
+      = f.input :age, collection: 16..30
+      = f.input :school, placeholder: "School"
+      = f.input :gender, collection: Rep.genders.keys
+      .form-actions
+        = f.button :submit
