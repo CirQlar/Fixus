@@ -2,7 +2,13 @@
 %html
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    :css
-      /* Email styles need to be inline */
+    = stylesheet_link_tag 'mailer', media: 'all'
   %body
-    = yield
+    #body
+      %table#header
+        %tr{width: "100%", height: "100px"}
+          %td{width: "100px", height: "100px"}
+            = image_tag 'fix.png', alt: "Fixus Logo", class: "logo"
+          %td{width: "300px", height: "100px"}
+            = image_tag 'fixus_logo_white.svg', alt: "Fixus Logo", class: "logo"
+      = yield
