@@ -1,4 +1,5 @@
 class RepsController < ApplicationController
+  layout 'maint'
   before_action :set_rep, only: [:show, :edit, :update]
 
   def index
@@ -20,7 +21,7 @@ class RepsController < ApplicationController
       render :new
     end
   end
-  
+
   private
     def set_rep
       @rep = Rep.friendly.find(params[:id])

@@ -16,4 +16,9 @@ class PagesController < ApplicationController
     #Load Terms of Service
   end
 
+  def maint
+    render layout: 'maint'
+    #Maintenance Page
+  end
+
 end
