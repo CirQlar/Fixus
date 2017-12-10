@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Fixus
+    = csrf_meta_tags
+    - if mobile_device?
+      = stylesheet_link_tag 'maint_mobile', media: 'all', 'data-turbolinks-track': 'reload'
+    - else
+      = stylesheet_link_tag 'maint', media: 'all', 'data-turbolinks-track': 'reload'
+
+  %body
+    = yield

@@ -11,3 +11,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( desktop.scss )
 Rails.application.config.assets.precompile += %w( mobile.scss )
+Rails.application.config.assets.precompile += %w( mailer.scss )
+Rails.application.config.assets.precompile += %w( maint.scss )
+Rails.application.config.assets.precompile += %w( maint_mobile.scss )

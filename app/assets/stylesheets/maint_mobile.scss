@@ -1,0 +1,157 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require ./application/fonts.scss
+ *= require_self
+ */
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  background-image: url(image_path('lipatt.png'));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .fixus_icon {
+    width: 500px;
+    height: 500px;
+  }
+
+  .fixus_logo {
+    height: 100px;
+    margin: 16px 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+  }
+
+  h2 {
+    font-size: 500%;
+  }
+
+  p {
+    width: 700px;
+    text-align: center;
+    font-size: 250%;
+    line-height: 70px;
+
+    a {
+      text-decoration: none;
+      color: #22b573;
+
+      &:hover {
+        color: #00554f;
+      }
+    }
+  }
+}
+
+.form {
+  padding: 32px 32px;
+  width: 100%;
+  text-align: left;
+  color: black;
+  margin: auto;
+  background-color: rgba(255, 255, 255, .8);
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .note {
+    display: block;
+    font-size: 75%;
+  }
+
+  form {
+    input, select, textarea {
+      width: 100%;
+      height: 96px;
+      margin: 16px 0;
+      font-size: 300%;
+      font-weight: 200;
+      padding: 16px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    label {
+      font-size: 300%;
+    }
+
+    textarea {
+      height: 128px;
+      resize: none;
+    }
+
+    .hint {
+      display: block;
+      text-align: right;
+      font-size: 75%;
+      font-style: italic;
+    }
+
+
+    select {
+      background-color: white;
+    }
+
+    input[type=checkbox] {
+      width: 48px;
+      height: 48px;
+      margin: 16px 16px 16px 0;
+    }
+
+    .form-actions {
+      display: flex;
+
+      input {
+        background-color: #22b573;
+        border: none;
+        color: white;
+        font-weight: 400;
+        cursor: pointer;
+        height: 96px;
+        font-size: 300%;
+        text-transform: uppercase;
+
+      }
+    }
+  }
+}
