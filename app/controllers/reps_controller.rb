@@ -28,6 +28,6 @@ class RepsController < ApplicationController
     end
 
     def rep_params
-      params.require(:rep).permit(:name, :email, :age, :gender, :school)
+      params.require(:rep).permit(:name, :email, :age, :gender, :university)
     end
 end

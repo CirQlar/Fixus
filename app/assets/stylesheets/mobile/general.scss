@@ -154,6 +154,13 @@ a {
       font-style: italic;
     }
 
+    .error {
+      display: block;
+      text-align: right;
+      font-size: 75%;
+      font-style: italic;
+      color: red;
+    }
 
     select {
       background-color: white;
