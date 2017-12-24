@@ -6,9 +6,21 @@
   %body
     #body
       %table#header
-        %tr{width: "100%", height: "100px"}
-          %td{width: "100px", height: "100px"}
-            = image_tag 'fix.png', alt: "Fixus Logo", class: "logo"
-          %td{width: "300px", height: "100px"}
-            = image_tag 'fixus_logo_white.svg', alt: "Fixus Logo", class: "logo"
+        %tr
+          %td.icon
+            = link_to image_tag( 'fix.png', alt: "Fixus Icon" ), root_url
+          %td.logo
+            = image_tag 'fixus_logo_white.svg', alt: "Fixus Logo"
       = yield
+      %table#footer
+        %tr.logo
+          %td
+            = image_tag 'fixus_logo_c.svg', alt: "Fixus Logo"
+        %tr.text
+          %td
+            = "Fixus is a service which allows you to order repairs for a variety of electronic devices such as phones, laptops, tablets, ipods and more at competitive prices. "
+            = link_to("Click here", new_user_registration_url)
+            = " to sign up and get your devices fixed."
+        %tr.text
+          %td
+            = "This message is intended for " + @_message.to.first + "."
