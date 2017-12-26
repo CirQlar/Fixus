@@ -7,7 +7,7 @@
 
   %li#title Menu
   #nav
-    - if user_or_admin_signed_in?
+    - if person_signed_in?
       = link_to "Repairs", repair_index_path
       = link_to "Devices", device_index_path
       = link_to "Addresses", address_index_path
