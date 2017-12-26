@@ -202,6 +202,37 @@ a {
       outline: none;
     }
 
+    .form-inputs {
+      .date {
+        label {
+          display: block;
+        }
+        select {
+          width: 32%;
+          float: left;
+
+          &:nth-child(3), &:nth-child(2) {
+            margin-right: 2%;
+          }
+        }
+      }
+
+      .row {
+        label {
+          display: block;
+        }
+        div {
+          width: 49%;
+          display: inline-block;
+          float: left;
+        }
+
+        div:nth-child(even) {
+          margin-right: 2%;
+        }
+      }
+    }
+
     textarea {
       height: 128px;
       resize: none;
