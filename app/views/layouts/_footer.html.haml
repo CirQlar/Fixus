@@ -1,46 +1,23 @@
 #footer
   .links
     %span#title Features
-    = link_to "Code review", '#'
-    = link_to "Project management", '#'
-    = link_to "Community", '#'
-    = link_to "Documentation", '#'
-    = link_to "Code hosting", '#'
+    = link_to 'Repair a Device', new_repair_path
+    = link_to 'Dashboard', user_root_path
+    = link_to "Repairs", repair_index_path
+    = link_to "Devices", device_index_path
+    = link_to "Addresses", address_index_path
 
   .links
     %span#title Resources
-    = link_to "Contact Fixus", '#'
+    = link_to "Terms of Service", terms_path
+    = link_to "Contact Us", '#'
     = link_to "Help", '#'
-    = link_to "Status", '#'
-    = link_to "Terms", '#'
-    = link_to "Privacy", '#'
-    = link_to "Security", '#'
-    = link_to "Training", '#'
-
-  .links
-    %span#title Community
-    = link_to "Personal", '#'
-    = link_to "Open source", '#'
-    = link_to "For Business", '#'
-    = link_to "For Education", '#'
-    = link_to "Sponsorships", '#'
-
-  .links
-    %span#title Platform
-    = link_to "Atom", '#'
-    = link_to "Help", '#'
-    = link_to "Electron", '#'
-    = link_to "GitHub Desktop", '#'
-    = link_to "Developers", '#'
 
   .links
     %span#title Company
-    = link_to "About", '#'
-    = link_to "Blog", '#'
-    = link_to "Customers", '#'
-    = link_to "Careers", '#'
-    = link_to "Press", '#'
-    = link_to "Shop", '#'
+    = link_to "About Fixus", '#'
+    = link_to "About Crystal Haze", '#'
+
 
   #logos
     = image_tag 'fixus_icon.svg', alt: "Fixus logo", class: 'fixus'

@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :authenticate_user_or_admin!
+  before_action :authenticate_person!
   before_action :set_address, only: [:show, :edit, :update]
 
   def index
