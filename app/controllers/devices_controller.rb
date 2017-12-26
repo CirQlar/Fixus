@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  before_action :authenticate_user_or_admin!
+  before_action :authenticate_person!
   before_action :set_device, only: [:show, :edit, :update, :fix]
 
   def index

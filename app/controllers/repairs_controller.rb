@@ -1,5 +1,5 @@
 class RepairsController < ApplicationController
-  before_action :authenticate_user_or_admin!, except: [:pick_up, :fix, :deliver, :cancel]
+  before_action :authenticate_person!, except: [:pick_up, :fix, :deliver, :cancel]
   before_action :authenticate_admin!, only: [:pick_up, :fix, :deliver, :cancel]
   before_action :set_repair, only: [:show, :edit, :update, :pick_up, :fix, :deliver, :cancel]
 
