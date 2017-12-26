@@ -3,8 +3,10 @@ class UsersController < ApplicationController
 
   def dashboard
     @repair = Repair.last
-    @device = @repair.device
-    @address = @repair.address
+    unless @repair.blank?
+      @device = @repair.device
+      @address = @repair.address
+    end
   end
 
 end
