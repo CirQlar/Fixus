@@ -7,9 +7,9 @@
         .row
           %label
             Name
-          = f.input :lastname, placeholder: "Last Name", label: false
+          = f.input :lastname, placeholder: "Last Name", label: false, autofocus: true
           = f.input :firstname, placeholder: "First Name", label: false
-        = f.input :email, required: true, autofocus: true
+        = f.input :email, required: true
         = f.input :phone, placeholder:"Phone Number"
         = f.input :gender, collection: Rep.genders.keys
         = f.input :dob, label: "Date of birth"

@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20171226180302) do
   create_table "reps", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "university"
+    t.string "school"
     t.integer "age"
     t.integer "gender"
     t.datetime "created_at", null: false
