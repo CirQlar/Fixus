@@ -29,6 +29,7 @@
 table {
   border-collapse: collapse;
   table-layout: fixed;
+  width: 100%;
 
   td {
     margin: 0;
@@ -37,7 +38,6 @@ table {
 }
 
 #header {
-  width: 100%;
   background-color: #22b573;
 
   tr {
@@ -63,7 +63,6 @@ table {
 }
 
 #footer {
-  width: 100%;
   background-color: #e8e8e8;
 
   tr {
@@ -79,24 +78,38 @@ table {
         }
       }
     }
+  }
+}
 
-    &.text {
-      td {
-        text-align: center;
-        padding: 8px 24px;
+tr.text {
+  td {
+    text-align: center;
+    padding: 8px 24px;
+    font-weight: 100;
 
-        font-weight: 100;
+    a {
+      text-decoration: none;
+      color: #22b573;
+      font-weight: 100;
+    }
+  }
 
-        a {
-          text-decoration: none;
-          color: #22b573;
-          font-weight: 100;
-        }
+  &:last-child {
+    td {
+      padding-bottom: 24px;
+    }
+  }
 
-        &:last-child {
-          padding-bottom: 24px;
-        }
-      }
+  &.left {
+    td {
+      text-align: left;
+    }
+  }
+
+  &.h1 {
+    td {
+      font-weight: 500;
+      font-size: 1.5em;
     }
   }
 }
