@@ -100,9 +100,21 @@ tr.text {
     }
   }
 
+  &.first {
+    td {
+      padding-top: 24px;
+    }
+  }
+
   &.left {
     td {
       text-align: left;
+    }
+  }
+
+  &.right {
+    td {
+      text-align: right;
     }
   }
 
@@ -110,6 +122,30 @@ tr.text {
     td {
       font-weight: 500;
       font-size: 1.5em;
+    }
+  }
+}
+
+table.social {
+  width: auto;
+  margin: auto;
+
+  tr.links {
+    td {
+      padding: 8px 0;
+
+      a {
+        text-align: center;
+        height: 48px;
+        width: 48px;
+        display: block;
+        padding: 8px 0;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
     }
   }
 }
