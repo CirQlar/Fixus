@@ -16,6 +16,7 @@ class RepsController < ApplicationController
     @rep = Rep.new(rep_params)
 
     if @rep.save
+      RepMailer.confirm_application(@rep).deliver
       redirect_to @rep
     else
       render :new
@@ -28,6 +29,6 @@ class RepsController < ApplicationController
     end
 
     def rep_params
-      params.require(:rep).permit(:name, :email, :age, :gender, :school)
+      params.require(:rep).permit(:name, :email, :age, :gender, :university)
     end
 end

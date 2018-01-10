@@ -1,4 +1,13 @@
-%p
-  Welcome #{@email}!
-%p You can confirm your account email through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+%table
+  %tr.text.left.first.h1.fallback-text
+    %td= "Hi, #{@resource.firstname}"
+  %tr.text.left.fallback-text
+    %td Thank you for joining the Fixus family. We are commited to ensuring you receive the best service.
+  %tr.text.left.fallback-text
+    %td
+      You can
+      = link_to 'click here to confirm your email address.', confirmation_url(@resource, confirmation_token: @token)
+      Or copy the following url into your browser:
+      = confirmation_url(@resource, confirmation_token: @token)
+  %tr.text.right.fallback-text
+    %td - Fixus
