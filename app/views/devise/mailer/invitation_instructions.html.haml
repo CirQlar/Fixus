@@ -1,6 +1,15 @@
-%p= t("devise.mailer.invitation_instructions.hello", email: @resource.email)
-%p= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url)
-%p= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token)
-- if @resource.invitation_due_at
-  %p= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format'))
-%p= t("devise.mailer.invitation_instructions.ignore").html_safe
+%table
+  %tr.text.left.first.h1.fallback-text
+    %td= t("devise.mailer.invitation_instructions.hello", email: @resource.email)
+  %tr.text.left.fallback-text
+    %td You have been invited to join Fixus as an admin or rep. We'd like to officially welcome you to the family.
+  %tr.text.left.fallback-text
+    %td
+      Please click here to
+      = link_to "accept your invitation.", accept_invitation_url(@resource, :invitation_token => @token)
+      = t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format'))
+  %tr.text.left.fallback-text
+    %td
+      If you do not wish to become an admin or rep, please ignore this email and send us a message @ fixusbot@gmail.com or call (insert phone number here). An account will not be created for you unless you accept this invitation.
+  %tr.text.right.fallback-text
+    %td - Fixus

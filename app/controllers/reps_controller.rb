@@ -16,6 +16,7 @@ class RepsController < ApplicationController
     @rep = Rep.new(rep_params)
 
     if @rep.save
+      RepMailer.confirm_application(@rep).deliver
       redirect_to @rep
     else
       render :new
