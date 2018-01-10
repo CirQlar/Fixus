@@ -8,7 +8,12 @@
 
 
 sadmin = Admin.new
+sadmin.firstname = "Hans"
+sadmin.lastname = "Growe"
+sadmin.dob = Date.today
+sadmin.gender = 1
 sadmin.email = "fixusbot@gmail.com"
+sadmin.phone = "09086439929"
 sadmin.password = "123456"
 sadmin.password_confirmation = "123456"
 sadmin.save!
