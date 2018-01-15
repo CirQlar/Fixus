@@ -86,17 +86,21 @@ namespace :deploy do
     end
   end
 
+  desc 'Runs rake db:migrate:reset'
+  task :reset => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:migrate:reset"
+        end
+      end
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
-    end
-  end
-
-  desc 'Stop application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:stop'
     end
   end
 
