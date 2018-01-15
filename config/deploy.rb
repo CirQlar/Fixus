@@ -92,6 +92,7 @@ namespace :deploy do
     on primary fetch(:migration_role) do
       within release_path do
         with rails_env: fetch(:rails_env) do
+          execute "export DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
           execute :rake, "db:migrate:reset"
         end
       end
