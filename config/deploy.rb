@@ -30,6 +30,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Defaults:
 # set :scm,           :git
+branch = $1 if `git branch` =~ /\* (\S+)\s/m
 set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
 # set :format,        :pretty
 # set :log_level,     :debug
@@ -59,7 +60,8 @@ namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
-      unless `git rev-parse #{:branch}` == `git rev-parse origin/#{:branch}`
+      puts branch
+      unless `git rev-parse #{branch}` == `git rev-parse origin/#{branch}`
         puts "WARNING: HEAD is not the same as origin/master"
         puts "Run `git push` to sync changes."
         exit
