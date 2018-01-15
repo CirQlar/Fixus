@@ -59,3 +59,5 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
