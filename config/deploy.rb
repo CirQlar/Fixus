@@ -30,7 +30,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Defaults:
 # set :scm,           :git
-set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
