@@ -32,7 +32,7 @@ require "capistrano/puma"
 install_plugin Capistrano::Puma
 require "capistrano/rbenv"
 set :rbenv_type, :user
-set :rbenv_ruby, '2.4.1'
+set :rbenv_ruby, '2.5.0'
 require "capistrano/rbenv_vars"
 # require "capistrano/chruby"
 require "capistrano/bundler"
