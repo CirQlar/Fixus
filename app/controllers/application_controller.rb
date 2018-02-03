@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def remove_header_and_footer
+    @nhnf = true
+  end
+
   helper_method :mobile_device?
   helper_method :person_signed_in?
 

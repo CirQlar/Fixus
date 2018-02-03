@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :remove_header_and_footer, only: [:index, :maint]
 
   def index
     #Load Home page
@@ -17,7 +18,6 @@ class PagesController < ApplicationController
   end
 
   def maint
-    render layout: 'maint'
     #Maintenance Page
   end
 

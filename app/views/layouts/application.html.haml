@@ -12,7 +12,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = render 'layouts/header'
+    = render 'layouts/header' unless @nhnf
 
     - if notice
       #flash
@@ -23,4 +23,4 @@
 
     = yield
 
-    = render 'layouts/footer'
+    = render 'layouts/footer' unless @nhnf
