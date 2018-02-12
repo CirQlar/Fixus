@@ -1,0 +1,50 @@
+.poster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+
+  .coloroverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(34, 181, 115, .9);
+  }
+}
+
+.indexposter {
+  background-image: url(image_path('busi.png'));
+
+  .head {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    padding: 0 128px;
+
+    a {
+      line-height: 80px;
+      float: right;
+      color: inherit;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 120%;
+      font-weight: 500;
+    }
+  }
+
+  .else {
+    width: 100%;
+    height: 100%;
+
+    .image, .text {
+      height: 100%;
+      flex-grow: 1;
+    }
+  }
+}
