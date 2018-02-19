@@ -4,11 +4,15 @@
     = link_to "Log in", new_user_session_path
   .else
     .image
-      = image_tag 'fix.png', alt: "Fixus logo", class: 'fixus'
+      = image_tag 'fix.png', alt: "Fixus logo", class: 'logo_icon'
     .text
-      %p ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-
-
+      .cont
+        %h1 Welcome to Fixus
+        %p No matter what you've got that needs fixing; phones, laptops, tablets, and more; we can help you fix it. At competitive rates and in record time, you won't ever regret doing busiiness with us.
+        .links
+          = link_to 'Sign up/Fix your device', new_repair_path, class: "btn light"
+          = link_to 'Link for Business', new_repair_path, class: "btn"
+          = link_to 'Learn more about us', about_path, class: "btn"
 
 
 
