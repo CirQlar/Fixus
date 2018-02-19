@@ -60,6 +60,7 @@ class RepairsController < ApplicationController
         @repair.pick_up_time = Time.now
         @repair.save
         redirect_to @repair, notice: "Successfully picked up"
+        CustomerMailer.pick_up(@repair).deliver_now
       end
     else
       redirect_to @repair, alert: "Can't pick up"
@@ -72,6 +73,7 @@ class RepairsController < ApplicationController
         @repair.fix_time = Time.now
         @repair.save
         redirect_to @repair, notice: "Successfully fixed"
+        CustomerMailer.fix(@repair).deliver_now
       end
     else
       redirect_to @repair, alert: "Can't fix"
@@ -84,6 +86,7 @@ class RepairsController < ApplicationController
         @repair.deliver_time = Time.now
         @repair.save
         redirect_to @repair, notice: "Successfully delivered"
+        CustomerMailer.deliver(@repair).deliver_now
       end
     else
       redirect_to @repair, alert: "Can't deliver"
@@ -96,6 +99,7 @@ class RepairsController < ApplicationController
         @repair.cancel_time = Time.now
         @repair.save
         redirect_to @repair, notice: "Successfully cancelled"
+        CustomerMailer.cancel(@repair).deliver_now
       end
     else
       redirect_to @repair, alert: "Can't cancel"
